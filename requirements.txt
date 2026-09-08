@@ -1,0 +1,6 @@
+# Pillow is load-bearing: every generated image is converted to WebP and the
+# run is refused if that conversion fails, so a post can never ship a raw PNG.
+Pillow>=10.4.0
+requests>=2.32.0
+python-frontmatter>=1.1.0
+PyYAML>=6.0.2

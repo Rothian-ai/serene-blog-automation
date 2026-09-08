@@ -1,0 +1,12 @@
+# Secrets: never commit. Only .env.example is tracked.
+.env
+.env.*
+!.env.example
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated post artefacts stay local until the PR carries them across.
+clients/*/insight-*/**/*.png
