@@ -106,6 +106,14 @@ def main() -> None:
     if not (110 <= len(excerpt) <= 170):
         print(f"  warning: excerpt is {len(excerpt)} chars; 120-156 reads best as a meta description")
 
+    if args.dry_run:
+        # Validation only. Deliberately before any git call: a dry run must not
+        # fetch, branch or otherwise disturb a working clone of the site.
+        print(f"dry run OK — {slug} validates against the site schema")
+        print(f"  category: {fm['category']}   plate: {fm['plate']}")
+        print(f"  images:   {len(list((post_dir / 'images').glob('*.webp')))} webp")
+        return
+
     # ── stage into the site repo ────────────────────────────────────
     run(["git", "fetch", "origin", base], site)
     branch = f"insight/{slug}"
@@ -117,10 +125,6 @@ def main() -> None:
         shutil.copy2(img, site / "public" / "images" / img.name)
         copied.append(img.name)
     print(f"  staged content/insights/{slug}.md and {len(copied)} images")
-
-    if args.dry_run:
-        print("dry run — staged but not committed")
-        return
 
     run(["git", "add", "content/insights", "public/images"], site)
     # gpgsign is disabled explicitly: the signing server returns 400 in this
