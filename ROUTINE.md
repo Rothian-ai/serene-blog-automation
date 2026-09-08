@@ -5,8 +5,15 @@ configuration, mirroring the Digital routine:
 
 - **Trigger:** every Monday, 14:00 GMT+5:30 (offset a few minutes off the hour)
 - **Runs with:** `<owner>/serene-blog-automation`
-- **Environment:** the environment holding `OPENAI_API_KEY`,
-  `POWERAUTOMATE_WEBHOOK_URL`, `SERENE_REPO_PATH`, `SERENE_BASE_BRANCH`
+- **Environment:** a Serene environment (do NOT reuse "All Rothian Websites":
+  its `WP_URL` points at digital.rothian.com and Serene has no WordPress).
+  Variables: `SERENE_REPO_PATH`, `SERENE_BASE_BRANCH`, `INCLUDE_IMAGES`.
+  Secrets (`FAL_KEY` or `OPENAI_API_KEY`, `GITHUB_TOKEN`,
+  `POWERAUTOMATE_WEBHOOK_URL`) belong in **API credentials**, not the
+  plaintext variables box.
+- **Setup script:** the contents of `setup.sh` in this repository. It installs
+  the Python dependencies and clones `serene-2` to `SERENE_REPO_PATH`, which
+  the routine needs because it checks out only this repo.
 - **Keep it a DRAFT:** the routine opens a draft pull request. It never merges.
 
 ---
@@ -31,8 +38,10 @@ CONTEXT
   returns 403; the GitHub MCP tools work if you need them.
 - Date: use today's date for the post folder (`insight-DDMMYYYY`) and the
   frontmatter `date`. The filename is the slug: `<descriptive-slug>.md`.
-- Env vars: SERENE_REPO_PATH, SERENE_BASE_BRANCH, OPENAI_API_KEY,
-  INCLUDE_IMAGES (true|false, default true), POWERAUTOMATE_WEBHOOK_URL.
+- Env vars: SERENE_REPO_PATH, SERENE_BASE_BRANCH, INCLUDE_IMAGES
+  (true|false, default true), POWERAUTOMATE_WEBHOOK_URL, GITHUB_TOKEN, and one
+  image key: FAL_KEY (preferred, matches the live environment) or
+  OPENAI_API_KEY. `generate_images.py` picks whichever is present.
 - Run `pip install -r requirements.txt` before publishing. Pillow is
   load-bearing: every image is converted to WebP and the run is refused if that
   conversion fails.
@@ -64,8 +73,15 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
 4. Publish the draft:
        python3 publish_post.py --post-dir clients/serene-bay/insight-DDMMYYYY
    Validates the frontmatter against the site's typed schema, copies the post
-   and images into the serene-2 clone, commits on `insight/<slug>`, opens a
-   DRAFT pull request, and posts the Teams notification.
+   and images into the serene-2 clone, commits on `insight/<slug>`, pushes, and
+   posts the Teams notification.
+
+   It also TRIES to open the draft pull request with `gh`. That call is a
+   GitHub REST call and REST is blocked by the proxy (403), so it is allowed to
+   fail: the branch is pushed either way. If the script reports that it could
+   not open the PR, open it yourself with the GitHub MCP tools, as a DRAFT,
+   using the base, head and title it printed. Confirm the PR URL before
+   finishing.
 5. After the pull request exists, append a row to
    `clients/serene-bay/blog-history.md` and commit the post folder plus the
    updated history to THIS repository.

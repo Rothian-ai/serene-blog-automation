@@ -20,9 +20,15 @@ from pathlib import Path
 import requests
 from PIL import Image
 
-API = "https://api.openai.com/v1/images/generations"
-MODEL = "gpt-image-1"
-SIZES = {"hero": "1536x1024", "01": "1024x1024", "02": "1024x1024"}
+# Two providers, chosen by whichever key the environment actually carries.
+# The Rothian routine prompt names OPENAI_API_KEY, but the live cloud
+# environment carries FAL_KEY, so support both rather than betting on one.
+OPENAI_API = "https://api.openai.com/v1/images/generations"
+OPENAI_MODEL = "gpt-image-1"
+FAL_API = "https://fal.run/fal-ai/flux/dev"
+
+OPENAI_SIZES = {"hero": "1536x1024", "01": "1024x1024", "02": "1024x1024"}
+FAL_SIZES = {"hero": "landscape_16_9", "01": "square_hd", "02": "square_hd"}
 
 
 def fail(msg: str) -> "None":
@@ -45,15 +51,43 @@ def load_manifest(post_dir: Path) -> dict:
     return data
 
 
-def generate(prompt: str, size: str, api_key: str) -> bytes:
+def provider() -> tuple[str, str]:
+    """(name, key). FAL wins when both are set: it is what the environment has."""
+    fal = os.environ.get("FAL_KEY", "").strip()
+    if fal:
+        return "fal", fal
+    openai = os.environ.get("OPENAI_API_KEY", "").strip()
+    if openai:
+        return "openai", openai
+    fail("neither FAL_KEY nor OPENAI_API_KEY is set")
+    raise SystemExit(1)  # unreachable, for the type checker
+
+
+def generate(prompt: str, key_slot: str, name: str, api_key: str) -> bytes:
+    if name == "fal":
+        r = requests.post(
+            FAL_API,
+            headers={"Authorization": f"Key {api_key}", "Content-Type": "application/json"},
+            json={"prompt": prompt, "image_size": FAL_SIZES.get(key_slot, "square_hd"),
+                  "num_images": 1},
+            timeout=180,
+        )
+        if r.status_code != 200:
+            fail(f"fal.ai returned {r.status_code}: {r.text[:300]}")
+        images = r.json().get("images") or []
+        if not images:
+            fail("fal.ai returned no image")
+        return requests.get(images[0]["url"], timeout=120).content
+
     r = requests.post(
-        API,
+        OPENAI_API,
         headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-        json={"model": MODEL, "prompt": prompt, "size": size, "n": 1},
+        json={"model": OPENAI_MODEL, "prompt": prompt,
+              "size": OPENAI_SIZES.get(key_slot, "1024x1024"), "n": 1},
         timeout=180,
     )
     if r.status_code != 200:
-        fail(f"image API returned {r.status_code}: {r.text[:300]}")
+        fail(f"OpenAI returned {r.status_code}: {r.text[:300]}")
     payload = r.json()["data"][0]
     if "b64_json" in payload:
         return base64.b64decode(payload["b64_json"])
@@ -87,9 +121,8 @@ def main() -> None:
     post_dir = Path(args.post_dir)
     if not post_dir.is_dir():
         fail(f"{post_dir} does not exist")
-    api_key = os.environ.get("OPENAI_API_KEY", "").strip()
-    if not api_key:
-        fail("OPENAI_API_KEY is not set")
+    name, api_key = provider()
+    print(f"image provider: {name}")
 
     manifest = load_manifest(post_dir)
     slug = manifest.get("slug") or post_dir.name
@@ -102,7 +135,7 @@ def main() -> None:
             print(f"  reuse  {out.name}")
             continue
         print(f"  build  {out.name}")
-        to_webp(generate(entry["prompt"], SIZES.get(key, "1024x1024"), api_key), out)
+        to_webp(generate(entry["prompt"], key, name, api_key), out)
 
     print(f"\n{len(manifest['images'])} images ready in {out_dir}")
     print("Open them and look at them before publishing:")

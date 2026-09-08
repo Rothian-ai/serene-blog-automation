@@ -45,6 +45,12 @@ def fail(reason: str) -> "None":
     sys.exit(1)
 
 
+def try_run(cmd: list[str], cwd: Path) -> tuple[bool, str]:
+    """Run without aborting. For steps that are allowed to fail."""
+    p = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
+    return p.returncode == 0, (p.stdout or p.stderr).strip()
+
+
 def run(cmd: list[str], cwd: Path) -> str:
     p = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
     if p.returncode != 0:
@@ -141,23 +147,41 @@ def main() -> None:
         f"- Images: {len(copied)}\n\n"
         "Drafted by the weekly insight routine. Review the Vercel preview before merging."
     )
-    pr_url = run(["gh", "pr", "create", "--base", base, "--head", branch,
-                  "--title", f"Insight: {fm['title']}", "--body", pr_body,
-                  "--draft"], site)
+    # The branch is pushed, which is the part that must not fail: git over HTTPS
+    # works in the cloud environment. Opening the pull request is a GitHub REST
+    # call, and REST through the proxy returns 403 there, so `gh` is attempted
+    # but is NOT allowed to fail the run. When it cannot open the PR the routine
+    # opens it with the GitHub MCP tools instead, using the details printed here.
+    ok, out = try_run(["gh", "pr", "create", "--base", base, "--head", branch,
+                       "--title", f"Insight: {fm['title']}", "--body", pr_body,
+                       "--draft"], site)
+    pr_url = out if ok and out.startswith("http") else ""
+    if not pr_url:
+        print("\n  gh could not open the pull request (expected when GitHub REST")
+        print("  is proxy-blocked). The branch is pushed. Open the DRAFT PR with")
+        print("  the GitHub MCP tools using:")
+        print(f"    base:  {base}")
+        print(f"    head:  {branch}")
+        print(f"    title: Insight: {fm['title']}")
+        if out:
+            print(f"    (gh said: {out.splitlines()[0][:160]})")
 
     if WEBHOOK:
         try:
             requests.post(WEBHOOK, json={
                 "event": "insight_drafted", "client": "serene-bay",
                 "title": fm["title"], "slug": slug, "category": fm["category"],
-                "pr_url": pr_url,
-                "text": f"Serene Bay insight ready for review: {fm['title']} — {pr_url}",
+                "pr_url": pr_url or f"branch pushed: {branch} (PR not yet opened)",
+                "branch": branch,
+                "text": (f"Serene Bay insight ready for review: {fm['title']} "
+                         + (pr_url if pr_url else f"(branch {branch} pushed, PR still to open)")),
             }, timeout=20)
             print("  Teams notification sent")
         except Exception as exc:  # noqa: BLE001
             print(f"  warning: Teams notification failed: {exc}", file=sys.stderr)
 
-    print(f"\nDRAFT PR: {pr_url}")
+    print(f"\nDRAFT PR: {pr_url or 'not opened — see the branch details above'}")
+    print(f"Branch:   {branch}")
     print(f"Slug:     {slug}")
     print(f"Excerpt:  {excerpt}")
 
