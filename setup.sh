@@ -13,10 +13,17 @@ pip install -r requirements.txt
 # GITHUB_TOKEN comes from the environment; git over HTTPS works even though the
 # GitHub REST API is proxy-blocked.
 TARGET="${SERENE_REPO_PATH:-/tmp/serene-2}"
+REPO="github.com/luismayrina/serene-2.git"
 if [ ! -d "$TARGET/.git" ]; then
-  git clone --depth 50 \
-    "https://x-access-token:${GITHUB_TOKEN}@github.com/luismayrina/serene-2.git" \
-    "$TARGET"
+  # Prefer an explicit token when one is configured. When it is not, fall back
+  # to a plain clone: the cloud environment carries its own git credentials from
+  # the GitHub connection, and an empty token would otherwise build the broken
+  # URL "https://x-access-token:@github.com/..." and fail authentication.
+  if [ -n "${GITHUB_TOKEN:-}" ]; then
+    git clone --depth 50 "https://x-access-token:${GITHUB_TOKEN}@${REPO}" "$TARGET"
+  else
+    git clone --depth 50 "https://${REPO}" "$TARGET"
+  fi
 fi
 
 # Commit identity for the branch this routine pushes.
