@@ -1,34 +1,48 @@
 #!/bin/bash
-# Cloud environment setup script for the Serene Bay insight routine.
-# Paste this into the environment's "Setup script" box.
+# Cloud environment setup for the Serene Bay insight routine.
+# Paste the whole of this into the environment's "Setup script" box.
 #
-# The Rothian environment runs `npm install` because that repo is Node. This
-# one is Python, and it also needs a clone of the site repository: the routine
-# checks out ONE repo (this one), but publishing writes into serene-2.
-set -euo pipefail
+# Two things this has to survive, learned the hard way:
+#
+# 1. This runs BEFORE the routine's repository is checked out, so
+#    `pip install -r requirements.txt` fails with "No such file or directory".
+#    The packages are therefore named explicitly rather than read from the file.
+#
+# 2. No `set -e`. A setup script that aborts takes the whole session with it,
+#    and none of the work here is worth losing a run over: the routine can
+#    install anything missing itself. Failures are reported, not fatal.
+set -uo pipefail
 
-pip install -r requirements.txt
+echo "--- python dependencies ---"
+# Named explicitly: requirements.txt is not on disk yet at this point.
+python3 -m pip install --quiet --disable-pip-version-check \
+  Pillow requests python-frontmatter PyYAML \
+  && echo "ok: Pillow, requests, python-frontmatter, PyYAML" \
+  || echo "WARN: pip install failed; the routine should retry it after checkout"
 
-# The site repo, cloned to whatever SERENE_REPO_PATH points at.
-# GITHUB_TOKEN comes from the environment; git over HTTPS works even though the
-# GitHub REST API is proxy-blocked.
+echo "--- site repository ---"
+# publish_post.py writes the post and images into this clone, then pushes a
+# branch. The routine only checks out its own repo, so serene-2 is fetched here.
 TARGET="${SERENE_REPO_PATH:-/tmp/serene-2}"
 REPO="github.com/luismayrina/serene-2.git"
-if [ ! -d "$TARGET/.git" ]; then
-  # Prefer an explicit token when one is configured. When it is not, fall back
-  # to a plain clone: the cloud environment carries its own git credentials from
-  # the GitHub connection, and an empty token would otherwise build the broken
-  # URL "https://x-access-token:@github.com/..." and fail authentication.
-  if [ -n "${GITHUB_TOKEN:-}" ]; then
-    git clone --depth 50 "https://x-access-token:${GITHUB_TOKEN}@${REPO}" "$TARGET"
-  else
-    git clone --depth 50 "https://${REPO}" "$TARGET"
-  fi
+
+if [ -d "$TARGET/.git" ]; then
+  echo "ok: $TARGET already present"
+elif [ -n "${GITHUB_TOKEN:-}" ]; then
+  # serene-2 is private, so a token is required unless the session's own git
+  # credentials happen to cover it.
+  git clone --depth 50 "https://x-access-token:${GITHUB_TOKEN}@${REPO}" "$TARGET" \
+    && echo "ok: cloned $TARGET" \
+    || echo "ERROR: clone failed even with GITHUB_TOKEN; check the token has repo scope and can read luismayrina/serene-2"
+else
+  git clone --depth 50 "https://${REPO}" "$TARGET" \
+    && echo "ok: cloned $TARGET without a token" \
+    || echo "ERROR: clone failed and GITHUB_TOKEN is not set; serene-2 is private"
 fi
 
-# Commit identity for the branch this routine pushes.
-git -C "$TARGET" config user.name  "Serene Insight Routine"
-git -C "$TARGET" config user.email "noreply@serenebay.ae"
+if [ -d "$TARGET/.git" ]; then
+  git -C "$TARGET" config user.name  "Serene Insight Routine"
+  git -C "$TARGET" config user.email "noreply@serenebay.ae"
+fi
 
-echo "setup complete: $(python3 -c 'import PIL,requests;print("Pillow+requests ok")')"
-echo "site clone: $TARGET"
+echo "--- setup finished ---"
