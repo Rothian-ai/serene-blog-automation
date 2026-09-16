@@ -2,16 +2,16 @@
   "slug": "dubai-property-investor-visa-price-floor-exception",
   "images": {
     "hero": {
-      "prompt": "A stone doorway threshold seen straight on, with two small mounted plaques beside the frame at eye level. The left plaque reads 'AED 750,000' with a line struck through the number. The right plaque reads 'AED 400,000' beneath it, unmarked. The doorway sits alone with no figures in the scene.",
-      "alt": "A stone doorway with two threshold plaques, illustrating how Dubai's property investor visa price floor changed."
+      "prompt": "A single plain stone doorway threshold seen straight on. Exactly two small plaques are mounted on the wall, one on the left of the frame and one on the right, and nothing else is mounted anywhere else on the wall. The left plaque has a single short word: 'BEFORE'. The right plaque has a single short word: 'AFTER'. No people are in the scene.",
+      "alt": "A stone doorway with before and after plaques, illustrating how Dubai's property investor visa price floor changed."
     },
     "01": {
-      "prompt": "Two rectangular certificate documents standing upright side by side on a flat surface, like two signposts. The left document is labelled '2 YEARS' across its top edge. The right document is labelled '10 YEARS' across its top edge and carries a smaller line beneath reading 'AED 2,000,000'.",
-      "alt": "Two upright certificates labelled two years and ten years, comparing Dubai's property investor visa with the Golden Visa."
+      "prompt": "Two plain certificate documents standing upright side by side on a flat surface, like two signposts. The left document has one short line of text centred near the top: 'INVESTOR VISA'. The right document has one short line of text centred near the top: 'GOLDEN VISA'. No other marks or numbers appear on either document.",
+      "alt": "Two upright certificates labelled investor visa and Golden Visa, comparing Dubai's property investor visa with the Golden Visa."
     },
     "02": {
-      "prompt": "Two simple house-shaped outlines set side by side. In front of the left house stands a single figure with a small label at its base reading 'AED 400,000'. In front of the right house stand two figures close together, each with the same small label 'AED 400,000' at its base, and a combined total 'AED 800,000' written beneath both figures.",
-      "alt": "A sole owner and two joint owners standing beside houses, each labelled with the ownership threshold that applies to them."
+      "prompt": "Two simple house-shaped outlines set side by side. In front of the left house stands exactly one plain figure, alone, with a short label beneath it reading 'SOLE OWNER'. In front of the right house stand exactly two plain figures side by side, shoulder to shoulder, with a short label beneath them reading 'JOINT OWNERS'.",
+      "alt": "A sole owner and two joint owners standing beside houses, illustrating the two ownership paths for Dubai's property investor visa."
     }
   }
 }
