@@ -1,0 +1,17 @@
+{
+  "slug": "dubai-property-investor-visa-price-floor-exception",
+  "images": {
+    "hero": {
+      "prompt": "A single plain stone doorway threshold seen straight on. Exactly two small plaques are mounted on the wall, one on the left of the frame and one on the right, and nothing else is mounted anywhere else on the wall. The left plaque has a single short word: 'BEFORE'. The right plaque has a single short word: 'AFTER'. No people are in the scene.",
+      "alt": "A stone doorway with before and after plaques, illustrating how Dubai's property investor visa price floor changed."
+    },
+    "01": {
+      "prompt": "Two plain certificate documents standing upright side by side on a flat surface, like two signposts. The left document has one short line of text centred near the top: 'INVESTOR VISA'. The right document has one short line of text centred near the top: 'GOLDEN VISA'. No other marks or numbers appear on either document.",
+      "alt": "Two upright certificates labelled investor visa and Golden Visa, comparing Dubai's property investor visa with the Golden Visa."
+    },
+    "02": {
+      "prompt": "Two simple house-shaped outlines set side by side. In front of the left house stands exactly one plain figure, alone, with a short label beneath it reading 'SOLE OWNER'. In front of the right house stand exactly two plain figures side by side, shoulder to shoulder, with a short label beneath them reading 'JOINT OWNERS'.",
+      "alt": "A sole owner and two joint owners standing beside houses, illustrating the two ownership paths for Dubai's property investor visa."
+    }
+  }
+}
