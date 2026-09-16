@@ -1,0 +1,17 @@
+{
+  "slug": "the-real-ceiling-on-an-off-plan-mortgage",
+  "images": {
+    "hero": {
+      "prompt": "A construction-stage residential tower rendered as an architectural elevation, split down the centre: the left half a solid built structure with scaffolding, the right half a translucent wireframe outline of the same tower not yet built. A single thin dividing line runs the height of the image, labelled '50%' where it crosses the tower's midpoint.",
+      "alt": "An off-plan mortgage in Dubai split diagram, half of a residential tower built and half shown as an unbuilt wireframe outline, divided by a line marked fifty per cent"
+    },
+    "01": {
+      "prompt": "A simple horizontal bar chart with two bars of equal length side by side. The first bar is labelled 'Off-plan' and is filled exactly halfway, from the left edge to the fifty per cent mark. The second bar is labelled 'Ready property' and is filled to the eighty-five per cent mark. A vertical guideline crosses both bars at the fifty per cent point.",
+      "alt": "Bar chart comparing loan-to-value limits, an off-plan mortgage filled to fifty per cent against a ready-property mortgage filled to eighty-five per cent"
+    },
+    "02": {
+      "prompt": "A horizontal timeline strip showing a building under construction on the left transitioning to a completed handed-over building on the right, with a row of small payment instalment markers spaced along the strip from reservation to handover, and one larger marker near the end of the strip labelled 'balance due'.",
+      "alt": "Timeline of an off-plan payment plan from reservation to handover, showing instalment markers and a final balance due near completion"
+    }
+  }
+}
