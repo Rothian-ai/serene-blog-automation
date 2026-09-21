@@ -1,0 +1,17 @@
+{
+  "slug": "off-plan-golden-visa-aed-2-million",
+  "images": {
+    "hero": {
+      "prompt": "An off-plan property sale contract (Oqood) lying beside a UAE residence visa card and a passport, arranged flat on a desk, suggesting the paperwork trail from an off-plan purchase toward long-term residency eligibility",
+      "alt": "An off-plan Oqood contract beside a UAE Golden Visa residence card, representing eligibility for the Golden Visa through off-plan property"
+    },
+    "01": {
+      "prompt": "A simple diagram of two document paths converging on a single milestone marker labelled 'AED 2,000,000': one path from a property title certificate, the other from a bank letter, both leading to the same threshold marker",
+      "alt": "Diagram of two eligibility paths for Dubai's Golden Visa converging on the AED 2,000,000 threshold: a title certificate for full ownership, and a bank letter confirming amount paid for a mortgaged property"
+    },
+    "02": {
+      "prompt": "A staged payment schedule shown as a row of instalment markers along a line, with a threshold flag placed at the point where the cumulative total reaches 'AED 2,000,000'",
+      "alt": "A staged off-plan payment schedule with a marker at the point cumulative payments reach AED 2,000,000, the figure Abu Dhabi's process asks off-plan buyers to prove"
+    }
+  }
+}
