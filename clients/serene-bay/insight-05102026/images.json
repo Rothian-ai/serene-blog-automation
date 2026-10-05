@@ -1,0 +1,17 @@
+{
+  "slug": "post-handover-payment-plan-dubai-real-cost",
+  "images": {
+    "hero": {
+      "prompt": "A developer's price list laid beside a handover key, with a payment schedule running in instalments after the key is handed over, and the label \"Post-handover\".",
+      "alt": "A post-handover payment plan shown as a payment schedule continuing after the keys are handed over"
+    },
+    "01": {
+      "prompt": "A table-style diagram of the premium over cash price against years deferred. Rows labelled 5, 8, 10 and 12 per cent. Columns labelled 1.5, 3 and 4 years. Cells show 3.3, 1.6, 1.2, 5.3, 2.6, 1.9, 6.6, 3.2, 2.4, 7.8, 3.8 and 2.9 per cent a year.",
+      "alt": "Grid of implied annual rates for premiums of 5 to 12 per cent deferred over 1.5, 3 and 4 years"
+    },
+    "02": {
+      "prompt": "A diagram of a unit with a cash price of AED 1,500,000 beside the same unit at a plan price of AED 1,650,000, with the AED 150,000 difference marked as the cost of deferral.",
+      "alt": "Two price tags for the same apartment, AED 1,500,000 cash and AED 1,650,000 on a plan, with the difference marked"
+    }
+  }
+}
