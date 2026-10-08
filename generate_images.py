@@ -41,6 +41,17 @@ def load_manifest(post_dir: Path) -> dict:
     if not m.exists():
         fail(f"no images.json in {post_dir}. The routine writes it from the post's own words.")
     data = json.loads(m.read_text())
+    # Accept the flat form the routine prompt describes ({"hero": {...}, ...})
+    # as well as {"slug": ..., "images": {...}}.
+    if "images" not in data:
+        data = {"images": data}
+    # The images must be named after the post's slug (its filename), never the
+    # folder: the frontmatter `image` path points at <slug>-hero.webp.
+    if not data.get("slug"):
+        posts = list(post_dir.glob("*.md"))
+        if len(posts) != 1:
+            fail(f"expected exactly one .md in {post_dir} to take the slug from, found {len(posts)}")
+        data["slug"] = posts[0].stem
     for key in ("hero", "01", "02"):
         if key not in data.get("images", {}):
             fail(f"images.json is missing the '{key}' entry")

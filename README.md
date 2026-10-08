@@ -6,7 +6,7 @@ Weekly insight automation for **Serene Bay** (serenebay.ae), modelled on the
 ## The one structural difference
 
 Rothian Digital publishes to WordPress. **Serene Bay has no WordPress.** Its
-blog is markdown in `content/insights/` in the `luismayrina/serene-2`
+blog is markdown in `content/insights/` in the `rothian-ai/serene-2`
 repository, prerendered by React Router and served from Vercel.
 
 So the publish step is the one thing that could not be copied across:

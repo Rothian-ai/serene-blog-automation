@@ -27,7 +27,7 @@ CONTEXT
   Dubai and Abu Dhabi. Salaried advisors, cross-developer comparison, a
   relationship that outlasts the handover.
 - Serene has NO WordPress. The blog is markdown in `content/insights/` in the
-  `luismayrina/serene-2` repository, prerendered by React Router on Vercel.
+  `rothian-ai/serene-2` repository, prerendered by React Router on Vercel.
   A draft here means a branch and a draft pull request, which Vercel previews.
 - This repository (`serene-blog-automation`) is connected to the routine and
   cloned into the working directory. A clone of `serene-2` is at
@@ -54,7 +54,8 @@ READ THESE SKILLS FIRST (do not work from memory)
 
 PIPELINE (prepare everything, publish last — no throwaway scripts)
 0. Dedup before choosing a topic. Read `clients/serene-bay/blog-history.md`
-   AND list `$SERENE_REPO_PATH/content/insights/`, reading the `title` and
+   AND list `$SERENE_REPO_PATH/content/insights/` (checked out on
+   `$SERENE_BASE_BRANCH`, the branch the PR targets), reading the `title` and
    `category` of every file. Merge both into one exclusion list; the
    repository is authoritative. Pick a subject that repeats no existing title,
    angle or focus keyphrase.
@@ -65,8 +66,9 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
    with the frontmatter the site validates (title, category, date,
    readingTime, excerpt, image, plate). Answer-first opening, at least one
    markdown table, sources linked inline at the figure they support.
-3. Write `images.json` in the same folder: three entries (`hero`, `01`, `02`),
-   each with a `prompt` built from that section's own words and an `alt`.
+3. Write `images.json` in the same folder:
+   `{"slug": "<slug>", "images": {"hero": {...}, "01": {...}, "02": {...}}}`,
+   each entry with a `prompt` built from that section's own words and an `alt`.
    Then generate:
        python3 generate_images.py --post-dir clients/serene-bay/insight-DDMMYYYY
    Open the WebP files and look at them before publishing.
@@ -80,8 +82,12 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
    GitHub REST call and REST is blocked by the proxy (403), so it is allowed to
    fail: the branch is pushed either way. If the script reports that it could
    not open the PR, open it yourself with the GitHub MCP tools, as a DRAFT,
-   using the base, head and title it printed. Confirm the PR URL before
-   finishing.
+   using the base, head and title it printed. Confirm the PR URL, then send
+   the Teams review message, which needs that link:
+       python3 publish_post.py --post-dir clients/serene-bay/insight-DDMMYYYY \
+         --notify-pr <PR URL> --keyphrase "<focus keyphrase>" [--preview-url <Vercel preview>]
+   Pass --preview-url only if the Vercel bot has already commented the preview
+   link on the PR; otherwise leave it out (reviewers find it on the PR).
 5. After the pull request exists, append a row to
    `clients/serene-bay/blog-history.md` and commit the post folder plus the
    updated history to THIS repository.
