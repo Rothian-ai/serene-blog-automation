@@ -241,7 +241,16 @@ def main() -> None:
     run(["git", "add", "content/insights", "public/images"], site)
     # gpgsign is disabled explicitly: the signing server returns 400 in this
     # environment and a plain `git commit` fails because of it.
-    run(["git", "-c", "commit.gpgsign=false", "commit", "-m",
+    # Vercel's Git integration silently skips any commit whose author email it
+    # does not recognise (serene-2/.github/DEPLOYING.md), so the draft gets no
+    # preview. SERENE_COMMIT_EMAIL sets an author Vercel knows.
+    ident = []
+    if os.environ.get("SERENE_COMMIT_EMAIL", "").strip():
+        ident = ["-c", f"user.email={os.environ['SERENE_COMMIT_EMAIL'].strip()}",
+                 "-c", f"user.name={os.environ.get('SERENE_COMMIT_NAME', 'Serene Insight Routine').strip()}"]
+    else:
+        print("  warning: SERENE_COMMIT_EMAIL is not set; Vercel may not build a preview")
+    run(["git", *ident, "-c", "commit.gpgsign=false", "commit", "-m",
          f"Insight: {fm['title']}"], site)
     run(["git", "push", "-u", "origin", branch, "--force-with-lease"], site)
 

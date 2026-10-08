@@ -38,7 +38,8 @@ CONTEXT
   returns 403; the GitHub MCP tools work if you need them.
 - Date: use today's date for the post folder (`insight-DDMMYYYY`) and the
   frontmatter `date`. The filename is the slug: `<descriptive-slug>.md`.
-- Env vars: SERENE_REPO_PATH, SERENE_BASE_BRANCH, INCLUDE_IMAGES
+- Env vars: SERENE_REPO_PATH, SERENE_BASE_BRANCH, SERENE_COMMIT_EMAIL (an
+  author address Vercel recognises, so the draft gets a preview), INCLUDE_IMAGES
   (true|false, default true), POWERAUTOMATE_WEBHOOK_URL, GITHUB_TOKEN, and one
   image key: FAL_KEY (preferred, matches the live environment) or
   OPENAI_API_KEY. `generate_images.py` picks whichever is present.
@@ -86,8 +87,13 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
    the Teams review message, which needs that link:
        python3 publish_post.py --post-dir clients/serene-bay/insight-DDMMYYYY \
          --notify-pr <PR URL> --keyphrase "<focus keyphrase>" [--preview-url <Vercel preview>]
-   Pass --preview-url only if the Vercel bot has already commented the preview
-   link on the PR; otherwise leave it out (reviewers find it on the PR).
+   Before sending, get the Vercel preview link: read the PR's comments and
+   its head commit's status with the GitHub MCP tools, looking for the Vercel
+   bot's "Preview" URL (a *.vercel.app address). Vercel takes a few minutes to
+   build, so check every minute or so for up to 10 minutes. Pass it as
+   --preview-url. If none appears, send without it and say so in the delivery
+   summary: it usually means SERENE_COMMIT_EMAIL is missing or not an address
+   Vercel recognises.
 5. After the pull request exists, append a row to
    `clients/serene-bay/blog-history.md` and commit the post folder plus the
    updated history to THIS repository.
