@@ -1,7 +1,7 @@
 ---
 title: 'The real cost of a post-handover payment plan in Dubai'
 category: Market Analysis
-date: '2026-10-05'
+date: '2026-10-08'
 readingTime: 6 min
 excerpt: 'A post-handover payment plan is credit priced into the unit. Here is how to measure the premium, the implied rate and the risks the buyer keeps.'
 image: /images/post-handover-payment-plan-dubai-real-cost-hero.webp

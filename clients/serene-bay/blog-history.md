@@ -9,6 +9,7 @@ Never repeat a title, an angle, or a focus keyphrase listed here.
 
 | Date | Title | Slug | Category | Focus keyphrase | Status |
 |---|---|---|---|---|---|
+| 2026-10-08 | The real cost of a post-handover payment plan in Dubai | `post-handover-payment-plan-dubai-real-cost` | Market Analysis | post-handover payment plan | draft ([PR #1](https://github.com/rothian-ai/serene-2/pull/1)) |
 | 2026-08-14 | Who Actually Pays the Broker on an Off-Plan Purchase in Dubai | `who-actually-pays-the-broker-off-plan` | The Model | (pre-existing) | published |
 | 2026-08-01 | How Late Dubai Off-Plan Projects Actually Run | `how-late-dubai-off-plan-projects-run` | Market Analysis | (pre-existing) | published |
 | 2026-07-20 | Why Snagging Should Never Be Done by the Company That Built It | `why-independent-snagging-matters` | Buyer Guides | (pre-existing) | published |
