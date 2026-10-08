@@ -222,17 +222,35 @@ def main() -> None:
     branch = f"insight/{slug}"
     run(["git", "checkout", "-B", branch, f"origin/{base}"], site)
 
-    shutil.copy2(md_path, site / "content" / "insights" / f"{slug}.md")
     copied = []
     for img in sorted((post_dir / "images").glob("*.webp")):
         shutil.copy2(img, site / "public" / "images" / img.name)
         copied.append(img.name)
+    if not (site / "public" / "images" / f"{slug}-hero.webp").exists():
+        # No hero (INCLUDE_IMAGES=false, or generation skipped): drop the
+        # frontmatter `image` so the site shows the post's plate instead of a
+        # broken image. `image` is optional in the site's Insight type.
+        head, sep, rest = md.partition("\n---")
+        head = "\n".join(l for l in head.splitlines() if not l.startswith("image:"))
+        (site / "content" / "insights" / f"{slug}.md").write_text(head + sep + rest)
+        print("  no hero image: removed `image` from the frontmatter; the plate will show")
+    else:
+        shutil.copy2(md_path, site / "content" / "insights" / f"{slug}.md")
     print(f"  staged content/insights/{slug}.md and {len(copied)} images")
 
     run(["git", "add", "content/insights", "public/images"], site)
     # gpgsign is disabled explicitly: the signing server returns 400 in this
     # environment and a plain `git commit` fails because of it.
-    run(["git", "-c", "commit.gpgsign=false", "commit", "-m",
+    # Vercel's Git integration silently skips any commit whose author email it
+    # does not recognise (serene-2/.github/DEPLOYING.md), so the draft gets no
+    # preview. SERENE_COMMIT_EMAIL sets an author Vercel knows.
+    ident = []
+    if os.environ.get("SERENE_COMMIT_EMAIL", "").strip():
+        ident = ["-c", f"user.email={os.environ['SERENE_COMMIT_EMAIL'].strip()}",
+                 "-c", f"user.name={os.environ.get('SERENE_COMMIT_NAME', 'Serene Insight Routine').strip()}"]
+    else:
+        print("  warning: SERENE_COMMIT_EMAIL is not set; Vercel may not build a preview")
+    run(["git", *ident, "-c", "commit.gpgsign=false", "commit", "-m",
          f"Insight: {fm['title']}"], site)
     run(["git", "push", "-u", "origin", branch, "--force-with-lease"], site)
 
