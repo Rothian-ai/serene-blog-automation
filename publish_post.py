@@ -104,8 +104,32 @@ def image_provider() -> str:
     return "openai" if os.environ.get("OPENAI_API_KEY", "").strip() else "none"
 
 
+def drafted_html(fm: dict, excerpt: str, pr_url: str, n_images: int,
+                 keyphrase: str = "", preview_url: str = "") -> str:
+    """The review message as Teams HTML, laid out line for line like the
+    Rothian Digital one, for a flow that posts it as a normal message."""
+    from html import escape as e
+    pr_no = pr_url.rstrip("/").rsplit("/", 1)[-1] if "/pull/" in pr_url else ""
+    lines = [
+        "<b>New blog draft ready for review</b>",
+        f"<b>{e(fm['title'])}</b>",
+        "",
+        'Site: <a href="https://serenebay.ae">Serene Bay</a>',
+        f"Status: draft | PR: #{pr_no} | Images: {image_provider()}" if pr_no
+        else f"Status: draft | Images: {image_provider()}",
+        f'<a href="{e(pr_url)}">Review &amp; edit on GitHub</a>',
+    ]
+    if preview_url:
+        lines.append(f'<a href="{e(preview_url)}">Preview the draft</a>')
+    lines += [f"<b>Excerpt:</b> {e(excerpt)}", "", "<b>SEO</b>"]
+    if keyphrase:
+        lines.append(f"Focus keyphrase: {e(keyphrase)}")
+    lines += [f"Meta title: {e(fm['title'])}", f"Meta description: {e(excerpt)}"]
+    return "<br>".join(lines)
+
+
 def send_drafted(fm: dict, slug: str, branch: str, excerpt: str, pr_url: str,
-                 n_images: int) -> None:
+                 n_images: int, keyphrase: str = "", preview_url: str = "") -> None:
     """The review message, in the same shape as the Rothian Digital one."""
     if not WEBHOOK:
         print("  warning: POWERAUTOMATE_WEBHOOK_URL is not set; Teams notification not sent",
@@ -113,7 +137,9 @@ def send_drafted(fm: dict, slug: str, branch: str, excerpt: str, pr_url: str,
         return
     payload = {"event": "insight_drafted", "client": "serene-bay", "title": fm["title"],
                "slug": slug, "category": fm["category"], "pr_url": pr_url,
-               "branch": branch, "excerpt": excerpt}
+               "branch": branch, "excerpt": excerpt, "keyphrase": keyphrase,
+               "preview_url": preview_url,
+               "html": drafted_html(fm, excerpt, pr_url, n_images, keyphrase, preview_url)}
     payload.update(teams_card(
         "New blog draft ready for review",
         [("Title", fm["title"]),
@@ -140,6 +166,8 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true", help="validate and stage, do not push or open a PR")
     ap.add_argument("--notify-pr", metavar="URL",
                     help="only send the Teams review message for an already-opened draft PR")
+    ap.add_argument("--keyphrase", default="", help="focus keyphrase, shown under SEO")
+    ap.add_argument("--preview-url", default="", help="the Vercel preview link, if known")
     args = ap.parse_args()
 
     post_dir = Path(args.post_dir).resolve()
@@ -164,7 +192,8 @@ def main() -> None:
         # After publishing, the clone is on the insight branch and the post
         # exists there, so this has to run before the duplicate check.
         n = len(list((post_dir / "images").glob("*.webp")))
-        send_drafted(fm, slug, f"insight/{slug}", fm.get("excerpt", ""), args.notify_pr, n)
+        send_drafted(fm, slug, f"insight/{slug}", fm.get("excerpt", ""), args.notify_pr, n,
+                     args.keyphrase, args.preview_url)
         return
     if fm.get("category") not in CATEGORIES:
         fail(f"category '{fm.get('category')}' is not one of {sorted(CATEGORIES)}")
@@ -235,7 +264,8 @@ def main() -> None:
             print(f"    (gh said: {out.splitlines()[0][:160]})")
 
     if pr_url:
-        send_drafted(fm, slug, branch, excerpt, pr_url, len(copied))
+        send_drafted(fm, slug, branch, excerpt, pr_url, len(copied),
+                     args.keyphrase, args.preview_url)
     else:
         print("\n  Teams notification NOT sent yet: it needs the PR link. After opening")
         print("  the draft PR, run this again with --notify-pr <PR URL>.")

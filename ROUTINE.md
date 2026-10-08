@@ -84,7 +84,10 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
    not open the PR, open it yourself with the GitHub MCP tools, as a DRAFT,
    using the base, head and title it printed. Confirm the PR URL, then send
    the Teams review message, which needs that link:
-       python3 publish_post.py --post-dir clients/serene-bay/insight-DDMMYYYY --notify-pr <PR URL>
+       python3 publish_post.py --post-dir clients/serene-bay/insight-DDMMYYYY \
+         --notify-pr <PR URL> --keyphrase "<focus keyphrase>" [--preview-url <Vercel preview>]
+   Pass --preview-url only if the Vercel bot has already commented the preview
+   link on the PR; otherwise leave it out (reviewers find it on the PR).
 5. After the pull request exists, append a row to
    `clients/serene-bay/blog-history.md` and commit the post folder plus the
    updated history to THIS repository.
