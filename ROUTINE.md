@@ -82,8 +82,9 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
    GitHub REST call and REST is blocked by the proxy (403), so it is allowed to
    fail: the branch is pushed either way. If the script reports that it could
    not open the PR, open it yourself with the GitHub MCP tools, as a DRAFT,
-   using the base, head and title it printed. Confirm the PR URL before
-   finishing.
+   using the base, head and title it printed. Confirm the PR URL, then send
+   the Teams review message, which needs that link:
+       python3 publish_post.py --post-dir clients/serene-bay/insight-DDMMYYYY --notify-pr <PR URL>
 5. After the pull request exists, append a row to
    `clients/serene-bay/blog-history.md` and commit the post folder plus the
    updated history to THIS repository.
