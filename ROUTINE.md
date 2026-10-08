@@ -27,7 +27,7 @@ CONTEXT
   Dubai and Abu Dhabi. Salaried advisors, cross-developer comparison, a
   relationship that outlasts the handover.
 - Serene has NO WordPress. The blog is markdown in `content/insights/` in the
-  `luismayrina/serene-2` repository, prerendered by React Router on Vercel.
+  `rothian-ai/serene-2` repository, prerendered by React Router on Vercel.
   A draft here means a branch and a draft pull request, which Vercel previews.
 - This repository (`serene-blog-automation`) is connected to the routine and
   cloned into the working directory. A clone of `serene-2` is at
@@ -54,7 +54,8 @@ READ THESE SKILLS FIRST (do not work from memory)
 
 PIPELINE (prepare everything, publish last — no throwaway scripts)
 0. Dedup before choosing a topic. Read `clients/serene-bay/blog-history.md`
-   AND list `$SERENE_REPO_PATH/content/insights/`, reading the `title` and
+   AND list `$SERENE_REPO_PATH/content/insights/` (checked out on
+   `$SERENE_BASE_BRANCH`, the branch the PR targets), reading the `title` and
    `category` of every file. Merge both into one exclusion list; the
    repository is authoritative. Pick a subject that repeats no existing title,
    angle or focus keyphrase.
@@ -65,8 +66,9 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
    with the frontmatter the site validates (title, category, date,
    readingTime, excerpt, image, plate). Answer-first opening, at least one
    markdown table, sources linked inline at the figure they support.
-3. Write `images.json` in the same folder: three entries (`hero`, `01`, `02`),
-   each with a `prompt` built from that section's own words and an `alt`.
+3. Write `images.json` in the same folder:
+   `{"slug": "<slug>", "images": {"hero": {...}, "01": {...}, "02": {...}}}`,
+   each entry with a `prompt` built from that section's own words and an `alt`.
    Then generate:
        python3 generate_images.py --post-dir clients/serene-bay/insight-DDMMYYYY
    Open the WebP files and look at them before publishing.
