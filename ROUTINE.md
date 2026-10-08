@@ -96,7 +96,10 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
    Vercel recognises.
 5. After the pull request exists, append a row to
    `clients/serene-bay/blog-history.md` and commit the post folder plus the
-   updated history to THIS repository.
+   updated history to THIS repository. Push the branch and open a DRAFT pull
+   request for it against `main` with the GitHub MCP tools, linking the
+   serene-2 draft PR. Give its URL in the delivery summary. Dedup reads
+   `blog-history.md` on `main`, so the row only counts once this is merged.
 
 REQUIREMENTS
 - The subject must connect to what Serene actually does, so the advisory reads
