@@ -1,0 +1,17 @@
+{
+  "slug": "off-plan-share-of-dubai-sales-price-evidence",
+  "images": {
+    "hero": {
+      "prompt": "A bar divided into two parts, a large part labelled \"Off-plan 76%\" and a smaller part labelled \"Resale 24%\", beside a row of unbuilt towers on a site plan.",
+      "alt": "The off-plan share of Dubai sales shown as 76 per cent of a single bar, with resale at 24 per cent"
+    },
+    "01": {
+      "prompt": "A table-style diagram with two rows, \"Off-plan\" and \"Resale\", showing 26,338 and 8,512 transactions, with changes of down 12% and down 59%.",
+      "alt": "Q2 2026 Dubai transactions: off-plan 26,338, down 12 per cent; resale 8,512, down 59 per cent"
+    },
+    "02": {
+      "prompt": "A diagram of one new launch surrounded by several comparison sources: completed homes nearby, the developer's earlier phase, the payment schedule and the developer's delivery record.",
+      "alt": "A new launch surrounded by four places a buyer can check its price against"
+    }
+  }
+}

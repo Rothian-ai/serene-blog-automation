@@ -16,3 +16,4 @@ Never repeat a title, an angle, or a focus keyphrase listed here.
 | 2026-06-24 | Selling Off-Plan Before Handover: What an Assignment Actually Involves | `selling-off-plan-before-handover` | Buyer Guides | (pre-existing) | published |
 | 2026-06-18 | Escrow Explained: What the Escrow Account Holds, How DLD Regulates It, and When Funds Are Released | `escrow-explained-what-rera-holds` | Buyer Guides | (pre-existing) | published |
 | 2026-05-22 | "A first buyer's sequence: from question to handover" | `a-first-buyers-sequence` | Buyer Guides | (pre-existing) | published |
+| 2026-10-08 | The Off-Plan Share of Dubai Sales Hit 76 Per Cent: What It Does to Price Evidence | `off-plan-share-of-dubai-sales-price-evidence` | Market Analysis | off-plan share of Dubai sales | draft PR #1 |
