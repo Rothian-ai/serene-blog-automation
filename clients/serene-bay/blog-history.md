@@ -16,3 +16,5 @@ Never repeat a title, an angle, or a focus keyphrase listed here.
 | 2026-06-24 | Selling Off-Plan Before Handover: What an Assignment Actually Involves | `selling-off-plan-before-handover` | Buyer Guides | (pre-existing) | published |
 | 2026-06-18 | Escrow Explained: What the Escrow Account Holds, How DLD Regulates It, and When Funds Are Released | `escrow-explained-what-rera-holds` | Buyer Guides | (pre-existing) | published |
 | 2026-05-22 | "A first buyer's sequence: from question to handover" | `a-first-buyers-sequence` | Buyer Guides | (pre-existing) | published |
+| 2026-10-05 | The real cost of a post-handover payment plan in Dubai | `post-handover-payment-plan-dubai-real-cost` | Market Analysis | post-handover payment plan | drafted (earlier run, added retrospectively) |
+| 2026-10-12 | What a DLD fee waiver is worth on an off-plan purchase | `dld-fee-waiver-off-plan-what-it-is-worth` | Market Analysis | DLD fee waiver | draft PR serene-2#2 |
