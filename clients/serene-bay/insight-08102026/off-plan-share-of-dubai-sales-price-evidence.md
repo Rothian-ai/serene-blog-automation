@@ -4,6 +4,7 @@ category: Market Analysis
 date: '2026-10-08'
 readingTime: 7 min
 excerpt: 'Off-plan reached 76 per cent of Dubai residential sales in Q2 2026. The off-plan share of Dubai sales changes what counts as reliable price evidence.'
+image: /images/off-plan-share-of-dubai-sales-price-evidence-hero.webp
 plate: stone
 ---
 

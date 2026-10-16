@@ -4,6 +4,7 @@ category: Market Analysis
 date: '2026-10-12'
 readingTime: 7 min
 excerpt: 'A DLD fee waiver is worth 4 per cent of the price, but it leaves the price itself untouched. Here is how to value the incentive against a discount.'
+image: /images/dld-fee-waiver-off-plan-what-it-is-worth-hero.webp
 plate: stone
 ---
 
