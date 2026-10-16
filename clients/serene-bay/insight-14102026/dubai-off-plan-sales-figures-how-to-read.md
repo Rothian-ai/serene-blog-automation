@@ -16,14 +16,16 @@ Three checks make any monthly figure usable. Ask what is in the scope, whether o
 
 All four reports below draw on Dubai Land Department (DLD) registrations, directly or through a data provider. They still produce different numbers for the same month.
 
-| Report | Basis | Off-plan figure, September 2026 | Wider total |
-|---|---|---|---|
-| [Projectory](https://projectory.ae/research/dubai-property-market-september-2026-dld-home-sales-report/) | DLD home-sale registrations, homes only | 6,960 homes, AED 12.27bn | 10,108 homes, AED 21.30bn |
-| [White & Co](https://whiteandcogroup.com/about-us/latest-property-news/dubai-real-estate-market-september-2026/) | Property Monitor, residential off-plan including resales | 7,144 transactions, AED 14.21bn | 36,391 transactions across four categories, AED 25.81bn |
-| [AGBI](https://www.agbi.com/analysis/real-estate/2026/10/dubais-off-plan-launch-drought-shows-up-in-tumbling-sales/) | DLD data, off-plan homes against resale homes | AED 15.5bn | AED 13.9bn of resale homes |
-| [Truhauz](https://truhauz.com/dubai-real-estate-market-report-september-2026/) | DLD figures published by Emirates 24\|7, sales only | 65.4 per cent of 11,430 deals | AED 29.66bn of sales within a AED 50.78bn headline |
+| Report | Period and data cut | Basis | Off-plan figure | Wider total |
+|---|---|---|---|---|
+| [Projectory](https://projectory.ae/research/dubai-property-market-september-2026-dld-home-sales-report/) | 1 to 30 September 2026, data as at 2 October | DLD home-sale registrations, homes only, off-plan including resales | 6,960 homes, AED 12.27bn | 10,108 homes, AED 21.30bn |
+| [Truhauz](https://truhauz.com/dubai-real-estate-market-report-september-2026/) | September 2026, DLD figures published 1 October | Sales only, by Truhauz's own calculation | 7,476 deals (65.4 per cent), AED 13.63bn | 11,430 sales, AED 29.66bn, inside a AED 50.78bn headline that also counts mortgages and gifts |
+| [White & Co](https://whiteandcogroup.com/about-us/latest-property-news/dubai-real-estate-market-september-2026/) | September 2026, Property Monitor data as of 6 October | Residential off-plan, developer sales plus off-plan resales | 7,144 transactions, AED 14.21bn | 36,391 transactions across four categories, AED 25.81bn |
+| [AGBI](https://www.agbi.com/analysis/real-estate/2026/10/dubais-off-plan-launch-drought-shows-up-in-tumbling-sales/) | September 2026, DLD data | Off-plan homes set against resale homes | AED 15.5bn | AED 13.9bn of resale homes |
 
-The spread is a matter of definition. Projectory counts home-sale registrations dated 1 to 30 September and states that its off-plan figure includes both initial sales and resales. White & Co says its off-plan line combines developer sales with later off-plan resales, and its 36,391 transactions include new rental contracts, which are not sales at all. Truhauz reports a headline of AED 50.78 billion across 16,490 transactions, then notes that only AED 29.66 billion of that was sales.
+![Bar chart of four reports' September 2026 off-plan values: Projectory AED 12.27bn, Truhauz AED 13.63bn, White & Co AED 14.21bn, AGBI AED 15.5bn](/images/dubai-off-plan-sales-figures-how-to-read-chart-01.webp)
+
+The spread is a matter of definition and timing. The data cuts differ by up to five days, and DLD can add or correct registrations after month-end, so even identical definitions would not match to the last unit. Projectory states that its off-plan figure includes both initial sales and resales. White & Co says its off-plan line combines developer sales with later off-plan resales, and its 36,391 transactions include new rental contracts, which are not sales at all. Truhauz reports a headline of AED 50.78 billion across 16,490 transactions, then separates out the AED 29.66 billion that was sales; the rest is mortgages and gifts.
 
 ## What each report is counting
 
@@ -31,7 +33,7 @@ Four questions separate one definition from another.
 
 **Which property types are in.** Projectory covers apartments, villas, stacked townhouses and hotel apartments, and excludes land, complete buildings and commercial property. A report that adds offices or land will show a larger total with no change in the housing market.
 
-**Whether rentals and mortgages sit in the total.** Both White & Co and Truhauz carry categories beyond sales in their wider figures. A headline that includes rental contracts measures activity in the property system, which is a different question from how many homes were bought.
+**Whether non-sales sit in the total.** White & Co's wider figure includes rental contracts and office resales. Truhauz's headline includes mortgages and gifts. A total that includes them measures activity in the property system, which is a different question from how many homes were bought.
 
 **Whether off-plan means primary only.** DLD classifies a registration as off-plan or ready by its registration type. An off-plan resale, where an existing buyer sells their place in a project before completion, still carries the off-plan label. Reports that fold these in report more off-plan activity than the developers sold. Anyone curious about how those transfers work can read the Serene Bay explainer on [selling off-plan before handover](/insights/selling-off-plan-before-handover).
 
@@ -48,6 +50,8 @@ The second check is concentration. Dubai registers each launch under one or more
 | Dubai total | 11,163 | 10,108 | down 1,055 |
 
 Source: [Projectory](https://projectory.ae/research/dubai-property-market-september-2026-dld-home-sales-report/), using revised August figures.
+
+![Stacked bars of home sales: August 9,660 other homes plus 1,503 Azizi Venice; September 9,654 other homes plus 454 Azizi Venice](/images/dubai-off-plan-sales-figures-how-to-read-chart-02.webp)
 
 Read the last column twice. Of the 1,055 fall in monthly home sales between August and September, 1,049 came from one development. Everything else in Dubai was flat to within six registrations. A commentary that describes the month as a broad cooling would be describing a pattern the data does not show, and one that described August as a broad surge would have made the opposite error.
 

@@ -52,7 +52,7 @@ def load_manifest(post_dir: Path) -> dict:
         if len(posts) != 1:
             fail(f"expected exactly one .md in {post_dir} to take the slug from, found {len(posts)}")
         data["slug"] = posts[0].stem
-    for key in ("hero", "01", "02"):
+    for key in ("hero",):  # section images are optional; charts come from make_charts.py
         if key not in data.get("images", {}):
             fail(f"images.json is missing the '{key}' entry")
         if not data["images"][key].get("prompt"):

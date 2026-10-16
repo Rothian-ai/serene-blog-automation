@@ -4,14 +4,6 @@
     "hero": {
       "prompt": "Four report sheets laid side by side with wide margins around them, all four fully inside the frame. Each sheet carries only a short label at the top and a block of plain horizontal lines for text, with no numbers anywhere. The labels read \"Homes only\", \"With resales\", \"Sales only\" and \"Wider total\". A magnifying glass rests beside the sheets, not over any text.",
       "alt": "Four reports of Dubai off-plan sales figures for the same month, each labelled by what it counts"
-    },
-    "01": {
-      "prompt": "A table drawn entirely inside the frame with a wide empty margin on every side, nothing cropped. Three rows with the labels Azizi Venice, All other Dubai homes and Dubai total, and two columns with the labels August and September. The cells are plain digits with no separator of any kind, no comma, no full stop, no space: 1503 and 454; 9660 and 9654; 11163 and 10108. No other numbers or text.",
-      "alt": "Table of August and September 2026 home sales for Azizi Venice, all other Dubai homes and the Dubai total"
-    },
-    "02": {
-      "prompt": "A diagram drawn entirely inside the frame with a wide empty margin on every side, nothing cropped. Three rounded boxes in a row, labelled \"Definition\", \"Top project\" and \"Like with like\", with a single arrow running left to right through all three. No other text, no numbers.",
-      "alt": "Three checks for a monthly sales figure: find the definition, look for the top project, compare like with like"
     }
   }
 }

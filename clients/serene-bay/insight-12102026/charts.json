@@ -1,0 +1,35 @@
+{
+  "slug": "dld-fee-waiver-off-plan-what-it-is-worth",
+  "charts": {
+    "01": {
+      "type": "stacked",
+      "title": "Median off-plan apartment: what the buyer pays under each offer",
+      "categories": [
+        "No incentive",
+        "4% fee waiver",
+        "4% price discount"
+      ],
+      "series": [
+        {
+          "name": "Contract price",
+          "values": [
+            1941130,
+            1941130,
+            1863485
+          ]
+        },
+        {
+          "name": "DLD fee at 4%",
+          "values": [
+            77645,
+            0,
+            74539
+          ]
+        }
+      ],
+      "prefix": "AED ",
+      "source": "Source: median price from betterhomes; fee and totals are our calculation at 4% of the contract price.",
+      "alt": "Stacked bars of the median apartment's price and DLD fee: no incentive AED 1,941,130 plus AED 77,645; fee waiver AED 1,941,130 plus nil; 4 per cent discount AED 1,863,485 plus AED 74,539"
+    }
+  }
+}
