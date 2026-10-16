@@ -1,3 +1,9 @@
-{"slug":"off-plan-share-of-dubai-sales-price-evidence","images":{"hero":{
-"prompt":"A scale-model street of tall new towers on one side and a few completed houses on the other, with a ledger open between them. The towers far outnumber the houses. Labels: \"Off-plan\" and \"Resale\". No numbers.",
-"alt":"The off-plan share of Dubai sales shown as many new towers beside a few completed homes, with a ledger between them"}}}
+{
+  "slug": "off-plan-share-of-dubai-sales-price-evidence",
+  "images": {
+    "hero": {
+      "prompt": "A wide, low panorama in which everything sits in a horizontal band across the middle of the frame, with plain empty space above and below and a wide empty margin at the left and right edges. In the band, left to right: a cluster of five small tall-block towers labelled \"Off-plan\", an open ledger in the centre, and a single completed house labelled \"Resale\". The towers clearly outnumber the house. The whole scene fits well inside the frame. No numbers.",
+      "alt": "The off-plan share of Dubai sales shown as many new towers beside a few completed homes, with a ledger between them"
+    }
+  }
+}

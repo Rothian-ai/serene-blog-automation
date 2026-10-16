@@ -41,6 +41,19 @@ no API key, and INCLUDE_IMAGES=false does not switch it off. Then embed it:
 - Look at every chart: labels collide, a source line truncates, a thin segment
   loses its number. Fix the data or the chart, then re-run.
 
+## Compose the hero for a wide crop
+
+The post header crops the hero to 21:9 (and the parallax scales it up about 14
+per cent), so a 3:2 picture loses roughly the top and bottom third and the
+outer edges. A subject that fills the frame arrives cut off. In the prompt:
+
+- Ask for everything to sit in a horizontal band across the middle of the
+  frame, with plain empty space above and below and a wide margin at both sides.
+- Keep labels away from the edges, and keep subjects small and landscape-shaped
+  rather than tall.
+- Before publishing, preview the crop: centre-crop the WebP to 21:9, then trim
+  another 12 per cent in width. If anything the post needs is cut, regenerate.
+
 ## When the image model is still used
 
 The hero. Keep any text in it to a few words and no numbers at all: a label is
