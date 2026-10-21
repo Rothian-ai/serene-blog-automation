@@ -1,0 +1,17 @@
+{
+ "slug": "off-plan-mortgage-pre-approval-dubai",
+ "images": {
+  "hero": {
+   "prompt": "An architectural model of an unfinished residential tower with a concrete frame and cranes, set on a table beside a blank sheet of paper and a pen, with no writing on any surface",
+   "alt": "Off-plan mortgage pre-approval in Dubai: a model of an unfinished tower beside a blank approval sheet and pen"
+  },
+  "01": {
+   "prompt": "A simple horizontal timeline with four evenly spaced dots well inside the margins, labelled Booking, Construction, Handover, Mortgage. A long bracket above the first three dots is labelled Buyer's own funds, and a short bracket above the last dot is labelled Bank loan up to 50%",
+   "alt": "Diagram of an off-plan purchase timeline showing buyer funds during construction and a bank loan of up to 50 per cent at handover"
+  },
+  "02": {
+   "prompt": "A magnifying glass held over a single highlighted line of a bound contract, beside a short checklist of four boxes, one box ticked, with only abstract grey bars standing in for text and no readable words",
+   "alt": "A magnifying glass over one highlighted clause of a contract beside a checklist"
+  }
+ }
+}
