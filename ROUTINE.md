@@ -73,13 +73,19 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
    with the frontmatter the site validates (title, category, date,
    readingTime, excerpt, image, plate). Answer-first opening, at least one
    markdown table, sources linked inline at the figure they support. Every
-   post also carries at least one data chart and, wherever two or more options
-   are compared (an incentive against a discount, one report against another),
-   a side-by-side table. State the period, the definition and the scope of
-   every statistic in plain words, and keep technical explanation short: say
-   it once, simply, then show it in a table or chart. Where a market-wide
-   figure is quoted, say how a single community or project can differ.
-   Charts: write `charts.json` (see the illustrative-imagery skill) and run
+   post uses visuals where the content needs them, not by default:
+     - a CHART when the post has figures the reader must weigh against each
+       other (a comparison between sources, a change over time, a share or a
+       split). Never a decorative chart, and never one for a single number.
+     - a side-by-side TABLE when two or more options are compared (an
+       incentive against a discount, one report against another).
+     - neither, when the post is explanatory and carries no such figures. Say
+       so in the delivery summary instead of forcing one.
+   State the period, the definition and the scope of every statistic in plain
+   words, and keep technical explanation short: say it once, simply, then show
+   it in a table or chart. Where a market-wide figure is quoted, say how a
+   single community or project can differ.
+   When a chart is needed, write `charts.json` (see the illustrative-imagery skill) and run
        python3 make_charts.py --post-dir clients/serene-bay/insight-DDMMYYYY
    Embed each chart in the body as markdown, directly after the paragraph or
    table it supports: `![alt](/images/<slug>-chart-01.webp)`.

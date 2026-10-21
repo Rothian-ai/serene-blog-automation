@@ -82,18 +82,23 @@ mortgages, gifts). Also record what the source says its own data source is.
 
 ## Visuals and comparisons
 
-Readers act on pictures and tables before paragraphs. Every post has:
+Readers act on pictures and tables before paragraphs, so use them where the
+content calls for one. Decide from the figures, not from habit:
 
-1. **At least one chart** of the post's own figures, made by
-   `make_charts.py` from `charts.json` and embedded in the body as
+1. **A chart** when the post has figures the reader must weigh against each
+   other: a comparison between sources, a change over time, a share or a split.
+   Make it with `make_charts.py` from `charts.json` and embed it as
    `![alt](/images/<slug>-chart-01.webp)` after the sentence or table it
-   supports. Two is usual. Pick the form for the point: bars for a comparison
-   between sources, stacked bars for a share or a composition, grouped bars
-   for the same measure from two publishers. Mark calculated figures hatched.
+   supports. Bars for a comparison between sources, stacked bars for a share or
+   a composition, grouped bars for one measure from two publishers. Mark
+   calculated figures hatched. One or two is usual. Never a decorative chart,
+   and never a chart of a single number.
 2. **A side-by-side table** whenever two or more options are compared: a
    waiver against a discount, one publisher against another, one fee schedule
    against another. Put the figure the reader will act on in a row of its own.
-3. **Plain explanation.** Define a technical term once, in a clause, then let
+3. **Neither**, if the post is explanatory and has no such figures. Do not
+   invent data to fill a visual slot.
+4. **Plain explanation.** Define a technical term once, in a clause, then let
    the table or chart carry it. Cut a paragraph that explains what a table
    already shows.
 
