@@ -71,8 +71,8 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
    what you derived yourself and label it "our calculation".
 2. Write the post as markdown into `clients/serene-bay/insight-DDMMYYYY/<slug>.md`
    with the frontmatter the site validates (title, category, date,
-   readingTime, excerpt, image, plate). Answer-first opening, a data table where
-   the figures call for one, sources linked inline at the figure they support.
+   readingTime, excerpt, image, plate). Answer-first opening, at least one markdown table,
+   sources linked inline at the figure they support.
    Use visuals where the content needs them, not by default:
      - a CHART when the post has figures the reader must weigh against each
        other (a comparison between sources, a change over time, a share or a
