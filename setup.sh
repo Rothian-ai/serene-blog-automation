@@ -18,8 +18,8 @@ echo "--- python dependencies ---"
 # --ignore-installed PyYAML: the image ships a Debian PyYAML that pip cannot
 # uninstall ("RECORD file not found"), which otherwise fails the whole install.
 python3 -m pip install --quiet --disable-pip-version-check --ignore-installed PyYAML \
-  Pillow requests python-frontmatter PyYAML \
-  && echo "ok: Pillow, requests, python-frontmatter, PyYAML" \
+  Pillow requests python-frontmatter PyYAML matplotlib \
+  && echo "ok: Pillow, requests, python-frontmatter, PyYAML, matplotlib" \
   || echo "WARN: pip install failed; the routine should retry it after checkout"
 
 echo "--- site repository ---"

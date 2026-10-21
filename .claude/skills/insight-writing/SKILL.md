@@ -60,6 +60,48 @@ featured: 1                  # optional, lower sorts first on the index
 5. **Close on substance.** No CTA, no summary of what you just said. The page
    appends its own conversation band.
 
+## Verify before you write
+
+Client review asked for figures to be checked against the original source.
+For every statistic, open the page it comes from (not a search summary) and
+confirm four things: the number, the period it covers, whether it is a count
+or a value, and what it includes (property types, off-plan resales, rentals,
+mortgages, gifts). Also record what the source says its own data source is.
+
+- If a page does not state a figure, do not use it. If a later source gives a
+  figure for an earlier period, say whose figure it is and for which measure.
+- Publishers disagree. When they do, show them side by side with their
+  definitions, never average or pick the convenient one.
+- Anything you calculate is labelled "our calculation", with the inputs shown.
+  Percentages from rounded inputs are given as approximate.
+- Keep the same number from being used for two different measures without
+  saying so (a quarter's share and a month's share can both be 76 per cent).
+- Say what a figure is not: a citywide average or share is not demand in one
+  community or project. Where the source shows the contrast, name it.
+- A broker or developer source is one informed view. Say so.
+
+## Visuals and comparisons
+
+Readers act on pictures and tables before paragraphs, so use them where the
+content calls for one. Decide from the figures, not from habit:
+
+1. **A chart** when the post has figures the reader must weigh against each
+   other: a comparison between sources, a change over time, a share or a split.
+   Make it with `make_charts.py` from `charts.json` and embed it as
+   `![alt](/images/<slug>-chart-01.webp)` after the sentence or table it
+   supports. Bars for a comparison between sources, stacked bars for a share or
+   a composition, grouped bars for one measure from two publishers. Mark
+   calculated figures hatched. One or two is usual. Never a decorative chart,
+   and never a chart of a single number.
+2. **A side-by-side table** whenever two or more options are compared: a
+   waiver against a discount, one publisher against another, one fee schedule
+   against another. Put the figure the reader will act on in a row of its own.
+3. **Neither**, if the post is explanatory and has no such figures. Do not
+   invent data to fill a visual slot.
+4. **Plain explanation.** Define a technical term once, in a clause, then let
+   the table or chart carry it. Cut a paragraph that explains what a table
+   already shows.
+
 ## No FAQ microdata
 
 The Rothian brief asks for `schema.org/FAQPage` microdata. Do not add it here.
