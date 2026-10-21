@@ -1,0 +1,8 @@
+{"slug":"abu-dhabi-off-plan-escrow-20-per-cent-rule","charts":{"01":{
+"type":"hbar",
+"title":"Developer retention on a cancelled Abu Dhabi unit, by construction stage",
+"categories":["Below 10% complete","10% to 30% complete","30% to 60% complete","60% to 100% complete"],
+"series":[{"name":"Share of contract value retained","values":[10,15,25,40]}],
+"prefix":"","suffix":"%","decimals":0,
+"source":"Decision No. 165 of 2025, as summarised by A&O Shearman (8 September 2026) and BLK Partners (26 May 2026)",
+"alt":"Bar chart: the developer retains 10 per cent of contract value below 10 per cent completion, 15 per cent at 10 to 30, 25 per cent at 30 to 60 and 40 per cent at 60 to 100 per cent"}}}
