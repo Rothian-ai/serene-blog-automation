@@ -1,0 +1,63 @@
+{
+  "slug": "dubai-off-plan-sales-figures-how-to-read",
+  "charts": {
+    "01": {
+      "type": "hbar",
+      "title": "Same month, four off-plan figures: September 2026, AED billion",
+      "categories": [
+        "Projectory",
+        "Truhauz",
+        "White & Co",
+        "AGBI"
+      ],
+      "series": [
+        {
+          "name": "Off-plan value",
+          "values": [
+            12.27,
+            13.63,
+            14.21,
+            15.5
+          ]
+        }
+      ],
+      "prefix": "AED ",
+      "suffix": "bn",
+      "decimals": 2,
+      "notes": [
+        "homes only",
+        "sales only",
+        "with resales",
+        "off-plan homes"
+      ],
+      "source": "Sources: Projectory, Truhauz (own calculation from DLD figures), White & Co, AGBI. Scopes differ; see the table.",
+      "alt": "Bar chart of four reports' September 2026 off-plan values: Projectory AED 12.27bn, Truhauz AED 13.63bn, White & Co AED 14.21bn, AGBI AED 15.5bn"
+    },
+    "02": {
+      "type": "stacked",
+      "title": "Dubai home sales registered by DLD: one project made the difference",
+      "categories": [
+        "August 2026",
+        "September 2026"
+      ],
+      "series": [
+        {
+          "name": "All other Dubai homes",
+          "values": [
+            9660,
+            9654
+          ]
+        },
+        {
+          "name": "Azizi Venice",
+          "values": [
+            1503,
+            454
+          ]
+        }
+      ],
+      "source": "Source: Projectory, DLD home-sale registrations, revised August figures.",
+      "alt": "Stacked bars of home sales: August 9,660 other homes plus 1,503 Azizi Venice; September 9,654 other homes plus 454 Azizi Venice"
+    }
+  }
+}

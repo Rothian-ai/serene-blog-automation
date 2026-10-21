@@ -63,16 +63,41 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
 1. Research with web search. Capture real, current statistics and their source
    URLs. Prefer DLD, RERA, ADREC, the developer's own filings and the
    established property press. Never use a figure you cannot link.
+   VERIFY before writing: open each source page and confirm every figure, its
+   period, its unit (count or value), its scope (property types, off-plan
+   resales, rentals) and what the source itself says its data comes from. A
+   figure only a search summary showed you, or that a page does not state, is
+   not used. Where publishers disagree, show both with their definitions. Say
+   what you derived yourself and label it "our calculation".
 2. Write the post as markdown into `clients/serene-bay/insight-DDMMYYYY/<slug>.md`
    with the frontmatter the site validates (title, category, date,
-   readingTime, excerpt, image, plate). Answer-first opening, at least one
-   markdown table, sources linked inline at the figure they support.
+   readingTime, excerpt, image, plate). Answer-first opening, at least one markdown table,
+   sources linked inline at the figure they support.
+   Use visuals where the content needs them, not by default:
+     - a CHART when the post has figures the reader must weigh against each
+       other (a comparison between sources, a change over time, a share or a
+       split). Never a decorative chart, and never one for a single number.
+     - a side-by-side TABLE when two or more options are compared (an
+       incentive against a discount, one report against another).
+     - neither, when the post is explanatory and carries no such figures. Say
+       so in the delivery summary instead of forcing one.
+   State the period, the definition and the scope of every statistic in plain
+   words, and keep technical explanation short: say it once, simply, then show
+   it in a table or chart. Where a market-wide figure is quoted, say how a
+   single community or project can differ.
+   When a chart is needed, write `charts.json` (see the illustrative-imagery skill) and run
+       python3 make_charts.py --post-dir clients/serene-bay/insight-DDMMYYYY
+   Embed each chart in the body as markdown, directly after the paragraph or
+   table it supports: `![alt](/images/<slug>-chart-01.webp)`.
 3. Write `images.json` in the same folder:
-   `{"slug": "<slug>", "images": {"hero": {...}, "01": {...}, "02": {...}}}`,
-   each entry with a `prompt` built from that section's own words and an `alt`.
+   `{"slug": "<slug>", "images": {"hero": {...}}}`, with a `prompt` built from
+   the post's own words and an `alt`. The AI image model makes the hero only.
+   It cannot be trusted with figures, so numbers go in charts (make_charts.py).
    Then generate:
        python3 generate_images.py --post-dir clients/serene-bay/insight-DDMMYYYY
-   Open the WebP files and look at them before publishing.
+   Open the WebP files, charts included, and look at them before publishing:
+   check every number against the post, and every chart is whole and legible.
+   INCLUDE_IMAGES=false skips only the AI hero; charts are still made.
 4. Publish the draft:
        python3 publish_post.py --post-dir clients/serene-bay/insight-DDMMYYYY
    Validates the frontmatter against the site's typed schema, copies the post

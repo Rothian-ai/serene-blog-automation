@@ -1,0 +1,67 @@
+{
+  "slug": "off-plan-share-of-dubai-sales-price-evidence",
+  "charts": {
+    "01": {
+      "type": "grouped",
+      "title": "Fall in Q2 2026 transactions on Q2 2025: two publishers, two answers",
+      "categories": [
+        "Off-plan",
+        "Resale",
+        "All transactions"
+      ],
+      "series": [
+        {
+          "name": "betterhomes",
+          "values": [
+            12,
+            59,
+            31
+          ],
+          "decimals": 0
+        },
+        {
+          "name": "JLL (via Khaleej Times)",
+          "values": [
+            23.1,
+            41.8,
+            28.6
+          ],
+          "decimals": 1
+        }
+      ],
+      "prefix": "-",
+      "suffix": "%",
+      "source": "Sources: betterhomes Q2 2026 report; JLL as reported by Khaleej Times, 23 July 2026. Definitions not published in full.",
+      "alt": "Grouped bars comparing the year-on-year fall in Q2 2026 transactions by betterhomes and JLL: off-plan 12 and 23.1 per cent, resale 59 and 41.8 per cent, all transactions 31 and 28.6 per cent"
+    },
+    "02": {
+      "type": "stacked",
+      "title": "Resale left faster than off-plan: Q2 transactions, year earlier vs Q2 2026",
+      "categories": [
+        "Q2 2025 (derived)",
+        "Q2 2026 (reported)"
+      ],
+      "derived_categories": [
+        0
+      ],
+      "series": [
+        {
+          "name": "Off-plan",
+          "values": [
+            29900,
+            26338
+          ]
+        },
+        {
+          "name": "Resale",
+          "values": [
+            20800,
+            8512
+          ]
+        }
+      ],
+      "source": "Source: betterhomes Q2 2026 report. Q2 2025 hatched: our arithmetic from its rounded year-on-year changes (off-plan -12%, resale -59%), to the nearest 100.",
+      "alt": "Stacked bars of Q2 transactions: derived Q2 2025 about 29,900 off-plan and 20,800 resale; Q2 2026 reported 26,338 off-plan and 8,512 resale"
+    }
+  }
+}

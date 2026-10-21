@@ -31,7 +31,8 @@ ROUTINE.md                              the prompt to paste into the routine
 .claude/skills/illustrative-imagery/    how the three images are built
 clients/serene-bay/branding/            voice, spelling, what NOT to style
 clients/serene-bay/blog-history.md      dedup ledger, seeded with the 7 live insights
-generate_images.py                      OpenAI images, converted to WebP
+generate_images.py                      AI hero image, converted to WebP
+make_charts.py                          data charts from charts.json, drawn deterministically as WebP
 publish_post.py                         stages into serene-2 and opens the draft PR
 ```
 
