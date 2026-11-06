@@ -2,10 +2,11 @@
 title: 'Developer defect liability in Dubai: what the law still covers after handover'
 category: Buyer Guides
 date: '2026-11-04'
-readingTime: 6 min
+readingTime: 8 min
 excerpt: 'Developer defect liability in Dubai runs ten years for structure and one year for installations. Which clock applies, and what the 5% holdback is not.'
 image: /images/developer-defect-liability-dubai-after-handover-hero.webp
 plate: stone
+imageAlt: 'Developer defect liability in Dubai: a cutaway model of an apartment building with a ring of keys and two measuring tapes, one long and one short'
 ---
 
 Developer defect liability in Dubai has two statutory clocks. Under Article 40 of Dubai Law No. 6 of 2019, the developer must repair structural defects for ten years from the date of the project's completion certificate, and must repair or replace defective installations such as mechanical, electrical, sanitary and sewerage works for one year, generally from handover of your unit. That is the answer. Everything else in this piece is about which clock is running for you, what proves a claim, and what does not protect you.
@@ -20,10 +21,10 @@ The law separates the building's structure from the things bolted into it. The s
 |---|---|---|
 | Period | Ten years | One year |
 | Starts | Date of the project's completion certificate | Handover of the unit to the owner (the completion certificate if the owner has not taken possession, per Chambers) |
-| Covers | Foundations, columns, structural walls, ceilings, staircases, facades, roofs | Mechanical, electrical, sanitary and sewerage installations |
+| Covers | Essential structural elements such as the foundation, walls and columns | Mechanical, electrical, plumbing and sewerage installations |
 | Source | Article 40, Law No. 6 of 2019 | Article 40, Law No. 6 of 2019 |
 
-Sources: [Chambers and Partners, 27 September 2026](https://chambers.com/articles/construction-defects-dubai-legal-remedies-for-new-property-owners); [Afridi & Angell](https://afridi-angell.com/wp-content/uploads/2019/10/c_399Law-6-of-2019_On-the-Ownership-of-Common-Property-in-the-Emirate-of-Dubai.pdf).
+Sources: [Chambers and Partners, 27 September 2026](https://chambers.com/articles/construction-defects-dubai-legal-remedies-for-new-property-owners); [Dr Hassan Elhais, 23 October 2024](https://www.legal500.com/intelligence/united-arab-emirates/real-estate-and-construction/understanding-developer-liability-for-maintenance-and-defect-costs-after-property-handover); [Afridi & Angell](https://afridi-angell.com/wp-content/uploads/2019/10/c_399Law-6-of-2019_On-the-Ownership-of-Common-Property-in-the-Emirate-of-Dubai.pdf).
 
 Commentators describe the one-year start point in slightly different words. Afridi & Angell tie it to handing the unit to the owner. Chambers says it generally runs from handover and, where the owner has not taken possession, from the completion certificate. Check the exact wording in the official text before you rely on a date.
 
@@ -32,6 +33,18 @@ Commentators describe the one-year start point in slightly different words. Afri
 The ten-year clock begins at the completion certificate, which the authority issues for the project, not for your unit. A buyer who takes handover a year after the certificate has already used a year of the ten. For structure the lost year rarely changes the outcome. For installations the start date can decide the claim.
 
 The one-year period is short and it is where most day-to-day faults sit: an air conditioning unit that fails, a water heater, a pump, a leaking waste pipe. Write down the handover date on the day you receive the keys. Everything is counted from it.
+
+## A worked example with dates
+
+Take an illustrative project. These dates are invented to show the mechanics, and the arithmetic is our calculation, not a figure from any source.
+
+| Event | Date | What it starts |
+|---|---|---|
+| Completion certificate issued for the project | 1 March 2027 | Ten-year structural period, ending 1 March 2037 |
+| Your unit is handed over | 1 September 2027 | One-year installations period, ending 1 September 2028 |
+| You discover a cracked structural element | 1 June 2030 | A three-year window to bring a Civil Code claim, to 1 June 2033 (per Chambers) |
+
+Two things follow. The six months between certificate and handover come out of the structural ten years but not out of the installations year. And a defect found late in the structural period still leaves time to act, because the three-year window runs from discovery. If a source in your own paperwork counts the installations year from the certificate instead, the end date moves six months earlier. That is the reason to ask the developer which date it uses, in writing.
 
 ## The 5% holdback is not your warranty
 
@@ -54,7 +67,7 @@ Both sources are law-firm commentary rather than the statute. They agree with ea
 
 ## What this means for a defect list
 
-A defect list made at handover is the first piece of evidence. A defect found in month nine is the second. For installations the question the statute poses is whether the item is defective within the period, so a dated, documented record does most of the work.
+A defect list made at handover is the first piece of evidence. A defect found in month nine is the second, and each should be dated. For installations the question the statute poses is whether the item is defective within the period, so a dated, documented record does most of the work.
 
 Chambers sets out what the file should hold:
 
@@ -79,3 +92,41 @@ It also does not reach everything in the complex. Law No. 6 of 2019 concerns the
 4. Who is the named contact for defect notices, and in what form must a notice be sent?
 
 An answer in writing is worth more than a verbal one. A buyer who has these four answers before the keys change hands holds a clock that nobody can quietly restart.
+
+## Common questions
+
+### How long is a developer liable for defects in Dubai?
+
+Under Article 40 of Dubai Law No. 6 of 2019, ten years for structural defects, counted from the project's completion certificate, and one year for defective installations such as mechanical, electrical, sanitary and sewerage works, generally counted from handover of the unit. Sources: [Chambers and Partners](https://chambers.com/articles/construction-defects-dubai-legal-remedies-for-new-property-owners) and [Afridi & Angell](https://afridi-angell.com/wp-content/uploads/2019/10/c_399Law-6-of-2019_On-the-Ownership-of-Common-Property-in-the-Emirate-of-Dubai.pdf).
+
+### What counts as a structural defect?
+
+A defect in the structural parts of the property. [Dr Hassan Elhais](https://www.legal500.com/intelligence/united-arab-emirates/real-estate-and-construction/understanding-developer-liability-for-maintenance-and-defect-costs-after-property-handover) describes these as essential elements such as the foundation, walls and columns. A worn finish or a faulty appliance is not a structural defect; a faulty installation falls under the one-year period instead.
+
+### When does the one-year installations period start?
+
+Afridi & Angell tie it to handing the unit to the owner. Chambers says it generally runs from handover and, if the owner has not taken possession, from the completion certificate. Confirm the start date with the developer in writing.
+
+### Is the 5% escrow retention a defects warranty?
+
+No. [Article 14 of Law No. 8 of 2007](https://dlp.dubai.gov.ae/Legislation%20Reference/2007/Law%20No.%20(8)%20of%202007.html) requires the escrow agent to retain five per cent of each escrow account after the completion certificate and release it to the developer one year after the units are registered in the purchasers' names. The article states no purpose, and it gives buyers no claim on the money.
+
+### Can a contract shorten the Civil Code's ten-year liability?
+
+[Kayrouz & Associates](https://www.kayrouzandassociates.com/insights/decennial-liability-uae-construction-2026-civil-code) report that contractor and engineer liability for structural defects cannot be excluded or limited by contract, and that the parties may extend the period but not shorten it. This is law-firm commentary on the code that took effect on 1 June 2026, so check the statute for your project.
+
+### How long do I have to bring a claim?
+
+Chambers reports that a claim under the federal decennial regime must be brought within three years of the collapse or the discovery of the defect. The ten years is the period in which the defect must appear, and the three years runs once you know.
+
+### What should a defect notice contain?
+
+Chambers lists the unit, the defect, the date it was discovered, earlier repair attempts, supporting evidence and the remedy sought. Send it in writing, not only by phone, and keep the Sale and Purchase Agreement, handover and snagging reports and the specification on file.
+
+### Do I need an independent engineer?
+
+Not for every defect. Where the cause is disputed, Chambers notes that an independent engineer or building consultant can establish whether the defect is structural, whether workmanship is at fault and what repair is needed, and that courts may appoint technical experts.
+
+### Does this apply to projects in Abu Dhabi?
+
+This article covers Dubai law only. Abu Dhabi has its own off-plan regime, and its rules on escrow and buyer default are set out in [our Abu Dhabi escrow note](/insights/abu-dhabi-off-plan-escrow-20-per-cent-rule).
