@@ -35,6 +35,26 @@ serenebay.ae. It drafts nothing and merges nothing.
 6. **Dry run first**: `python3 post_to_gbp.py --dry-run` shows exactly what
    would post, without posting.
 
+### Rothian (or any other site with a sitemap)
+
+The same script posts a site's own articles to its own profile when given a
+sitemap instead of the serene-2 clone. For Rothian's verified profile:
+
+- Variables: `GBP_ACCOUNT_ID=116592847110487137624`,
+  `GBP_LOCATION_ID=17962375305605091292` (the verified `https://www.rothian.com`
+  profile; the other two Rothian locations are unverified and are not used),
+  `GBP_SITEMAP_URL=https://www.rothian.com/sitemap.xml`,
+  `GBP_PATH_PREFIX=/insights/`, `GBP_SITE_NAME=Rothian`, `GBP_POST_SINCE`.
+- The same three credentials, signed in as the account that manages the
+  Rothian profile. `SERENE_REPO_PATH` is not needed.
+- Network policy must allow `oauth2.googleapis.com`,
+  `mybusiness.googleapis.com` and `www.rothian.com`.
+- Rothian's article pages share one og:image, so every Rothian post carries
+  the same picture until articles get their own.
+
+Use one routine per profile: the location, sitemap and site name are
+environment variables, so each profile needs its own environment.
+
 Suggested trigger: daily, mid-morning Dubai time. One post per run at most, so
 a backlog drains a day at a time rather than flooding the profile.
 
@@ -45,8 +65,9 @@ Never post anything that is not live on serenebay.ae.
 
 1. Run `pip install -r requirements.txt`.
 2. Run `python3 post_to_gbp.py`. It reads `GBP_POST_SINCE` from the
-   environment, lists insights on the production branch of the serene-2 clone,
-   checks each is live on serenebay.ae, skips any the profile already links
+   environment and lists the candidate insights: from the sitemap when
+   `GBP_SITEMAP_URL` is set, otherwise from the production branch of the
+   serene-2 clone. It checks each is live, skips any the profile already links
    to, and posts at most one. It sends the Teams message itself.
 3. If it prints "nothing new to post", stop. That is the normal result on most
    days and needs no notification.
