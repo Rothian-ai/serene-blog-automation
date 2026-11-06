@@ -24,7 +24,7 @@ from PIL import Image
 # The Rothian routine prompt names OPENAI_API_KEY, but the live cloud
 # environment carries FAL_KEY, so support both rather than betting on one.
 OPENAI_API = "https://api.openai.com/v1/images/generations"
-OPENAI_MODEL = "gpt-image-1"
+OPENAI_MODEL = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-1")
 FAL_API = "https://fal.run/fal-ai/flux/dev"
 
 OPENAI_SIZES = {"hero": "1536x1024", "01": "1024x1024", "02": "1024x1024"}

@@ -1,0 +1,17 @@
+{
+ "slug": "oqood-registration-dubai-off-plan-what-it-proves",
+ "images": {
+  "hero": {
+   "prompt": "A wide scene of a registry counter with a bound ledger open on it and a single certificate sheet being stamped, a small scale model of an apartment tower standing beside the ledger. Everything sits in a horizontal band across the middle of the frame with plain empty space above and below and a wide margin at both sides. A small label on the ledger reads OQOOD. No numbers.",
+   "alt": "Oqood registration in Dubai: a registry ledger and a stamped certificate beside a model of an off-plan tower"
+  },
+  "01": {
+   "prompt": "A simple left-to-right diagram of four stages joined by arrows: a signed contract sheet labelled SPA, a registry entry card labelled OQOOD, a building under construction, and a finished building with a deed sheet labelled TITLE DEED. Subjects are small and landscape-shaped, arranged in a band across the middle with empty space above and below. No numbers.",
+   "alt": "Diagram of the stages from sale and purchase agreement to Oqood entry to construction and title deed"
+  },
+  "02": {
+   "prompt": "A certificate and a signed contract laid side by side with a clear margin of empty space around them, a magnifying glass resting over the certificate, and a blank sheet with five empty tick boxes below them. The only labels are CERTIFICATE and SPA, each fully inside the frame. No numbers.",
+   "alt": "A certificate and a sale agreement compared field by field with a checklist"
+  }
+ }
+}
