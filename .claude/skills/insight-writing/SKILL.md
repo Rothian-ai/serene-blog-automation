@@ -135,8 +135,10 @@ No. Article 28 of Law No. 6 of 2019 ...
   a "what if". Do not restate a paragraph as a question.
 - Plain markdown only. No `<details>`, no HTML and no hand-written
   `schema.org/FAQPage` microdata. The site's insight route lifts this section
-  out and emits the FAQPage structured data itself, so authors write
-  markdown and the route owns the schema.
+  out, shows it as an accordion (one question open at a time) and emits the
+  FAQPage structured data itself, so authors write markdown and the route
+  owns the presentation and the schema. Links in answers work inside the
+  accordion.
 
 ## SEO and GEO
 
