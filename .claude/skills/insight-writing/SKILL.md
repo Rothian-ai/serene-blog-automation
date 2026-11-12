@@ -58,7 +58,10 @@ featured: 1                  # optional, lower sorts first on the index
    uses it: `[DLD transaction data](https://...)`. Leave outbound links plain
    markdown; the site does not add `nofollow`, so they are dofollow already.
 5. **Close on substance.** No CTA, no summary of what you just said. The page
-   appends its own conversation band.
+   appends its own conversation band. The last argued section ends the
+   article; only the FAQ follows it.
+6. **Frequently asked questions, always last.** Every insight ends with a
+   `## Frequently asked questions` section. See the section below.
 
 ## Verify before you write
 
@@ -102,13 +105,38 @@ content calls for one. Decide from the figures, not from habit:
    the table or chart carry it. Cut a paragraph that explains what a table
    already shows.
 
-## No FAQ microdata
+## Frequently asked questions (required, markdown only)
 
-The Rothian brief asks for `schema.org/FAQPage` microdata. Do not add it here.
-The body is markdown, structured data for the site is emitted centrally from
-`app/root.tsx`, and hand-written microdata in a post body would be unstyled
-markup that duplicates what the route already declares. If an FAQ helps the
-reader, write it as a `## Common questions` section with `### ` questions.
+Every insight closes with this section, written exactly like this:
+
+```markdown
+## Frequently asked questions
+
+### When do off-plan service charges start in Dubai?
+
+From the project's completion date, or from an earlier payment default,
+under the [Rental Disputes Center's ruling](https://...).
+
+### Can I refuse to pay while I dispute snagging?
+
+No. Article 28 of Law No. 6 of 2019 ...
+```
+
+- The heading is exactly `## Frequently asked questions`. Not "Common
+  questions", not "FAQs", not "FAQ". `publish_post.py` refuses anything else.
+- It is the last `## ` section in the post. Nothing follows it.
+- Four to seven questions, each a `### ` heading phrased the way a buyer
+  would type it into a search box, ending in a question mark. Use the focus
+  keyphrase in at least one question.
+- Each answer is 40 to 90 words, answers in its first sentence, and stands on
+  its own (search engines and AI answers quote it out of context). Link the
+  source for any figure, as in the body.
+- Add what the body does not already say: a follow-on question, an edge case,
+  a "what if". Do not restate a paragraph as a question.
+- Plain markdown only. No `<details>`, no HTML and no hand-written
+  `schema.org/FAQPage` microdata. The site's insight route lifts this section
+  out and emits the FAQPage structured data itself, so authors write
+  markdown and the route owns the schema.
 
 ## SEO and GEO
 
