@@ -61,6 +61,35 @@ def notify_failure(reason: str) -> None:
         print(f"could not report failure: {exc}", file=sys.stderr)
 
 
+FAQ_HEADING = "## Frequently asked questions"
+
+
+def check_faq(md: str) -> None:
+    """Every insight ends with an FAQ the site turns into FAQPage schema.
+
+    The label is fixed by the client: exactly "Frequently asked questions".
+    """
+    body = md.split("---", 2)[2] if md.startswith("---") else md
+    h2s = [ln.strip() for ln in body.splitlines() if re.match(r"^##\s", ln)]
+    if not h2s:
+        fail("the post has no ## sections")
+    wrong = [h for h in h2s if re.match(r"^##\s+(common questions|faqs?|frequently asked questions)\s*$", h, re.I)
+             and h != FAQ_HEADING]
+    if wrong:
+        fail(f"FAQ heading must read exactly '{FAQ_HEADING}', found '{wrong[0]}'")
+    if FAQ_HEADING not in h2s:
+        fail(f"the post has no '{FAQ_HEADING}' section; every insight ends with one")
+    if h2s[-1] != FAQ_HEADING:
+        fail(f"'{FAQ_HEADING}' must be the last ## section, but '{h2s[-1]}' follows it")
+    section = body.split(FAQ_HEADING, 1)[1]
+    questions = [ln[4:].strip() for ln in section.splitlines() if ln.startswith("### ")]
+    if not 4 <= len(questions) <= 7:
+        fail(f"the FAQ has {len(questions)} questions; it needs four to seven ### questions")
+    for q in questions:
+        if not q.endswith("?"):
+            fail(f"FAQ question does not end with a question mark: '{q}'")
+
+
 def fail(reason: str) -> "None":
     print(f"ERROR: {reason}", file=sys.stderr)
     notify_failure(reason)
@@ -199,6 +228,7 @@ def main() -> None:
         fail(f"category '{fm.get('category')}' is not one of {sorted(CATEGORIES)}")
     if fm.get("plate") not in PLATES:
         fail(f"plate '{fm.get('plate')}' is not one of {sorted(PLATES)}")
+    check_faq(md)
     for k in ("title", "date", "excerpt", "readingTime"):
         if not fm.get(k):
             fail(f"frontmatter is missing '{k}'")

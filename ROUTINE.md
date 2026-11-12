@@ -72,6 +72,8 @@ PIPELINE (prepare everything, publish last — no throwaway scripts)
 2. Write the post as markdown into `clients/serene-bay/insight-DDMMYYYY/<slug>.md`
    with the frontmatter the site validates (title, category, date,
    readingTime, excerpt, image, plate). Answer-first opening, at least one markdown table,
+   a closing `## Frequently asked questions` section (four to seven `### ` questions,
+   sourced answers, last section of the post),
    sources linked inline at the figure they support.
    Use visuals where the content needs them, not by default:
      - a CHART when the post has figures the reader must weigh against each
@@ -132,6 +134,10 @@ REQUIREMENTS
 - Evergreen with a current peg. Anchor to a real development, but write so the
   post still reads in three years. The brand rule is "no dates that expire":
   absolute dates in the body are fine, "this week" and "recently" are not.
+- Every post ends with a `## Frequently asked questions` section: exactly that
+  heading, four to seven `### ` questions with sourced answers, plain markdown.
+  The site emits the FAQPage schema from it; publish_post.py refuses a post
+  without it.
 - Answer-first opening (roughly the first 200 words), at least one data table,
   and sources linked inline. Outbound links are plain markdown and therefore
   dofollow already.

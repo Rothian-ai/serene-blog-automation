@@ -1,0 +1,8 @@
+{"slug": "off-plan-service-charges-dubai-when-they-start", "charts": {"01": {
+  "type": "hbar",
+  "title": "Median approved service charge by community, 2026",
+  "categories": ["Dubai Land", "All residential, Dubai", "Jumeirah Village Circle", "Dubai Hills Estate", "Business Bay", "Dubai Creek Harbour", "Burj Khalifa District"],
+  "series": [{"name": "Median", "values": [12.34, 15.54, 16.44, 18.53, 19.97, 20.67, 28.67]}],
+  "prefix": "AED ", "suffix": "/sq ft", "decimals": 2,
+  "source": "DLD Service Charge Index (Mollak), RERA-approved budgets, via Continental Club, 10 Nov 2026",
+  "alt": "Bar chart of median approved service charges in 2026 for six Dubai communities, from AED 12.34 per square foot in Dubai Land to AED 28.67 in Burj Khalifa District, against a citywide median of AED 15.54"}}}
