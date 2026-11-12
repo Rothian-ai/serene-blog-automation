@@ -85,3 +85,25 @@ The SPA and the developer's documents can answer more than most buyers ask of th
 ## What this changes in the decision
 
 Service charges are a running cost that lasts as long as ownership does, and on an off-plan purchase they arrive at the point when the buyer's cash is most stretched. Two units at a similar price in the same community can carry approved rates many times apart, as the range in Jumeirah Village Circle shows. That difference belongs in the comparison between projects, alongside the payment plan and the handover date, and it can only be judged from completed buildings, approved budgets and the contract, read before the booking rather than after the keys.
+
+## Frequently asked questions
+
+### When do off-plan service charges start in Dubai?
+
+From the project's completion date, or from the date the buyer defaulted on payments if that comes first. That is the principle the [Dubai Rental Disputes Center applied](https://gulfnews.com/business/property/dubai-rental-disputes-center-clarifies-who-pays-property-service-charges-before-handover-1.500291650) to buyers on the preliminary register. Collecting the keys later does not move the start date. During construction the developer carries the running costs, as nothing is yet in use.
+
+### Does the developer pay service charges on unsold units?
+
+Yes. Article 25(a) of [Law No. 6 of 2019](https://dlp.dubai.gov.ae/Legislation%20Reference/2019/Law%20No.%20%286%29%20of%202019%20Concerning%20Ownership%20of%20Jointly%20Owned%20Real%20Property%20in%20the%20Emirate%20of%20Dubai.html) makes the developer pay its share for every unit it has not sold. It also pays for sold units where the sale contract or reservation agreement says it will. That is why a payment plan promising a charge-free period is worth having only if the promise is written into the SPA.
+
+### Is the service charge in the brochure binding?
+
+No. No law requires a developer to give a service charge estimate at booking, and a brochure figure is not a budget. Under Article 27 of [Law No. 6 of 2019](https://dlp.dubai.gov.ae/Legislation%20Reference/2019/Law%20No.%20%286%29%20of%202019%20Concerning%20Ownership%20of%20Jointly%20Owned%20Real%20Property%20in%20the%20Emirate%20of%20Dubai.html), nothing can be collected without RERA's approval, and the budget must be audited. RERA may approve a temporary budget first, so treat the first year's charge as provisional.
+
+### How do I check a building's approved service charge?
+
+Use the [Dubai Land Department's Service Charge Index](https://dubailand.gov.ae/en/eservices/service-charge-index/). You can search it by title deed, by project or on a map, and it shows the RERA-approved rate per square foot for each budget year. A building that is not yet complete has no entry. For an off-plan unit, read the rates of three or four completed buildings of similar age, amenities and developer.
+
+### Can I stop paying service charges while I dispute defects with the developer?
+
+No. Article 28 of [Law No. 6 of 2019](https://dlp.dubai.gov.ae/Legislation%20Reference/2019/Law%20No.%20%286%29%20of%202019%20Concerning%20Ownership%20of%20Jointly%20Owned%20Real%20Property%20in%20the%20Emirate%20of%20Dubai.html) says an owner may not refuse to pay charges that RERA has approved. Under Article 32, the management entity has a lien on the unit for arrears, so the unit cannot be sold until they are paid. An execution judge can also order a sale by auction. Defect disputes have their own routes.
