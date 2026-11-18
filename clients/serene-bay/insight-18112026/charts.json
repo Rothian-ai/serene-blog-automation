@@ -1,0 +1,10 @@
+{"slug": "off-plan-payment-default-dubai-what-the-developer-keeps", "charts": {"01": {
+  "type": "stacked",
+  "title": "AED 2,000,000 unit, AED 1,000,000 paid: the most a developer may keep on termination",
+  "categories": ["Above 80%", "60% to 80%", "Below 60%, started", "Not started"],
+  "series": [{"name": "Developer may keep", "values": [800, 800, 500, 300]},
+             {"name": "Refunded to buyer", "values": [200, 200, 500, 700]}],
+  "derived_categories": [0, 1, 2, 3],
+  "prefix": "AED ", "suffix": "k", "decimals": 0,
+  "source": "Our calculation from the ceilings in Dubai Law No. 19 of 2017, Article 11. Figures in AED thousands",
+  "alt": "Stacked bars for an AED 2,000,000 unit with AED 1,000,000 paid: the developer may keep up to AED 800,000 above 60 per cent completion, AED 500,000 below 60 per cent, and AED 300,000 if work never started"}}}

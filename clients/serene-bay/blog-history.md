@@ -9,7 +9,10 @@ Never repeat a title, an angle, or a focus keyphrase listed here.
 
 | Date | Title | Slug | Category | Focus keyphrase | Status |
 |---|---|---|---|---|---|
+| 2026-11-18 | Off-plan payment default in Dubai: what the developer can keep, and when | `off-plan-payment-default-dubai-what-the-developer-keeps` | Buyer Guides | off-plan payment default in Dubai | draft PR serene-2#21 |
 | 2026-11-11 | Off-plan service charges in Dubai: when the bill starts and how to estimate it | `off-plan-service-charges-dubai-when-they-start` | Buyer Guides | off-plan service charges | draft PR serene-2#19 |
+| 2026-10-28 | Oqood registration in Dubai: what the off-plan register proves and when it starts to count | `oqood-registration-dubai-off-plan-what-it-proves` | Buyer Guides | Oqood registration | in serene-2 beta |
+| 2026-10-21 | Abu Dhabi off-plan escrow: when the developer can touch your money | `abu-dhabi-off-plan-escrow-20-per-cent-rule` | Buyer Guides | Abu Dhabi off-plan escrow | in serene-2 beta |
 | 2026-10-19 | Off-plan mortgage pre-approval in Dubai: what a bank commits to at booking | `off-plan-mortgage-pre-approval-dubai` | Buyer Guides | off-plan mortgage pre-approval | draft PR serene-2#4 |
 | 2026-10-14 | Dubai off-plan sales figures: why four reports give four answers | `dubai-off-plan-sales-figures-how-to-read` | Market Analysis | Dubai off-plan sales figures | draft PR (serene-2 #3) |
 | 2026-10-12 | What a DLD fee waiver is worth on an off-plan purchase | `dld-fee-waiver-off-plan-what-it-is-worth` | Market Analysis | DLD fee waiver | draft PR (serene-2 #2) |
